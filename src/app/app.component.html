@@ -1,0 +1,147 @@
+<!-- Create Navbar component -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    RadioWRX
+  </a>
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Bands</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Events</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Videos</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">CD Funds</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Bands By Fans</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Log in</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <p>
+        Main Album image here
+      </p>
+      <div class="row">
+        <p>
+          Some text will go here
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row carousel-style">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-6">
+          <p class="carousel-header">
+            Videos
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <p class="carousel-navigation">
+            <a id="link" href="#">See all ></a>
+          </p>
+        </div>
+        <carousel class="carousel">
+          <slide>
+            <img src="assets/images/1.jpg" alt="first slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="assets/images/3.jpg" alt="third slide" style="display: block; width: 100%;">
+          </slide>
+        </carousel>
+      </div>
+      <div class="row carousel-style">
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-8">
+          <p class="carousel-header">
+            Bands
+          </p>
+        </div>
+        <div class="col-sm-2">
+          <p class="carousel-navigation">
+            <a id="link" href="#">See all ></a>
+          </p>
+        </div>
+        <carousel>
+          <slide>
+            <img src="assets/images/1.jpg" alt="first slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="assets/images/3.jpg" alt="third slide" style="display: block; width: 100%;">
+          </slide>
+        </carousel>
+      </div>
+      <div class="row carousel-style">
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-8">
+          <p class="carousel-header">
+            Events
+          </p>
+        </div>
+        <div class="col-sm-2">
+          <p class="carousel-navigation">
+            <a id="link" href="#">See all ></a>
+          </p>
+        </div>
+        <carousel>
+          <slide>
+            <img src="assets/images/1.jpg" alt="first slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="assets/images/3.jpg" alt="third slide" style="display: block; width: 100%;">
+          </slide>
+        </carousel>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="row">
+    <div class="col-md-6">
+      Bullshit
+    </div>
+    <div class="col-md-6">
+      Bullshit
+    </div>
+  </div>
+</div>
