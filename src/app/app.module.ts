@@ -7,6 +7,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 import { AlertModule } from 'ngx-bootstrap';
 
 
@@ -22,7 +24,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     AlertModule.forRoot(),
     CollapseModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
