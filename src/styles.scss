@@ -4,35 +4,22 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
-  p {
-    font-size: 12px;
-    margin: 0;
-    color: #ffffff;
-  }
 
 }
 
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
-  p {
-    font-size: 12px;
-    margin: 0;
-    color: #ffffff;
-  }
+
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  p {
-    color: #ffffff;
-  }
+
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (max-width: 1200px) {
-  p {
-    color: #ffffff;
-  }
+  
 }
 
 #link {
@@ -42,7 +29,7 @@
 }
 
 .carousel-navigation {
-  text-align: right !important;
+  text-align: right;
 }
 
 .carousel-style {
