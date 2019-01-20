@@ -19,7 +19,26 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (max-width: 1200px) {
-  
+
+}
+
+.vertical {
+  border-left: 1px solid #ccc;
+  height: 200px;
+  margin-top: 50px
+}
+
+.login-box {
+  border: 1px solid #ccc;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.site-text {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px
 }
 
 #link {
@@ -89,4 +108,8 @@
 
 .table-no-padding {
   padding: 0px;
+}
+
+.center-text {
+  text-align: center;
 }

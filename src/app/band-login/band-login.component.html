@@ -1,6 +1,6 @@
 <h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
 <div class="container">
-  <p class="site-text">Log in to Your RadioWRX Account</p>
+  <p class="site-text">Log in to Your RadioWRX Band Account</p>
   <div class="row login-box">
     <div class="col-sm-6">
       <form [formGroup]="loginForm">
@@ -15,13 +15,19 @@
         </div>
         <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-primary">Login</button>
         <div class="col-sm-12">
-          <p class="site-text">No RadioWRX account? <a routerLink="/register">Register</a></p>
-          <p class="site-text">Forgot Password? <a routerLink="/forgot-password"></a></p>
+          <p class="site-text">No RadioWRX Band account? <a routerLink="/register-band">Register</a></p>
+          <p class="site-text"> <a routerLink="/band-forgot-password">Forgot Password?</a></p>
         </div>
       </form>
     </div>
-    <div class="col-md-6 site-text">
-      <h5>RadioWRX Fans enjoy...</h5>
+    <div class="col-md-6">
+      <h5>RadioWRX Bands enjoy...</h5>
+      <ul>
+        <li>Something</li>
+        <li>Something</li>
+        <li>Something</li>
+        <li>Something</li>
+      </ul>
     </div>
   </div>
   <!--<div class="row">

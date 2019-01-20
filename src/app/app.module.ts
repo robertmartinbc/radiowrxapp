@@ -25,6 +25,13 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { UserResolver } from './user/user.resolver';
+import { FanLoginComponent } from './fan-login/fan-login.component';
+import { BandLoginComponent } from './band-login/band-login.component';
+import { ContactComponent } from './contact/contact.component';
+import { RegisterFanComponent } from './register-fan/register-fan.component';
+import { RegisterBandComponent } from './register-band/register-band.component';
+import { FanForgotPasswordComponent } from './fan-forgot-password/fan-forgot-password.component';
+import { BandForgotPasswordComponent } from './band-forgot-password/band-forgot-password.component';
 
 
 @NgModule({
@@ -34,7 +41,14 @@ import { UserResolver } from './user/user.resolver';
     RoutingComponents,
     LoginComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
+    FanLoginComponent,
+    BandLoginComponent,
+    ContactComponent,
+    RegisterFanComponent,
+    RegisterBandComponent,
+    FanForgotPasswordComponent,
+    BandForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
