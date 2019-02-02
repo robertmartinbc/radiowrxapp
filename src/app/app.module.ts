@@ -32,6 +32,14 @@ import { RegisterFanComponent } from './register-fan/register-fan.component';
 import { RegisterBandComponent } from './register-band/register-band.component';
 import { FanForgotPasswordComponent } from './fan-forgot-password/fan-forgot-password.component';
 import { BandForgotPasswordComponent } from './band-forgot-password/band-forgot-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { MyBandsMusicComponent } from './my-bands-music/my-bands-music.component';
+import { MyBandsEventsComponent } from './my-bands-events/my-bands-events.component';
+import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.component';
+import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
+import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
 
 
 @NgModule({
@@ -48,7 +56,15 @@ import { BandForgotPasswordComponent } from './band-forgot-password/band-forgot-
     RegisterFanComponent,
     RegisterBandComponent,
     FanForgotPasswordComponent,
-    BandForgotPasswordComponent
+    BandForgotPasswordComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    EditUserComponent,
+    MyBandsMusicComponent,
+    MyBandsEventsComponent,
+    MyBandsVideosComponent,
+    MyBandsCdFundsComponent,
+    MyBandsPrivatePartiesComponent
   ],
   imports: [
     BrowserModule,

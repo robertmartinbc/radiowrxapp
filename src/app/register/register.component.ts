@@ -1,33 +1,31 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../core/auth.service'
-import { Router, Params } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
-  registerForm: FormGroup;
-  errorMessage: string = '';
-  successMessage: string = '';
+  //registerForm: FormGroup;
+  //errorMessage: string = '';
+  //successMessage: string = '';
 
   constructor(
-    public authService: AuthService,
-    private router: Router,
-    private fb: FormBuilder
-  ) {
-    this.createForm();
-   }
+    public authService: AuthService
+    //private router: Router,
+    //private fb: FormBuilder
+  ) {}
 
-   createForm() {
+  ngOnInit() {}
+
+   /*createForm() {
      this.registerForm = this.fb.group({
        email: ['', Validators.required ],
        password: ['',Validators.required]
      });
-   }
+   }*/
 
    ;/*
    tryFacebookLogin(){
@@ -53,7 +51,7 @@ export class RegisterComponent {
      }, err => console.log(err)
      )
    }
-   */
+
    tryRegister(value){
      this.authService.doRegister(value)
      .then(res => {
@@ -65,6 +63,6 @@ export class RegisterComponent {
        this.errorMessage = err.message;
        this.successMessage = "";
      })
-   }
+   }*/
 
 }

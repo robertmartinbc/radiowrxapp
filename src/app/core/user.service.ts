@@ -19,6 +19,7 @@ export class UserService {
       var user = firebase.auth().onAuthStateChanged(function(user){
         if (user) {
           resolve(user);
+          console.log(user.uid);
         } else {
           reject('No user logged in');
         }
