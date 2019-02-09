@@ -11,27 +11,21 @@ import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AuthGuard } from './core/auth.guard';
-import { AuthService } from './core/auth.service';
-import { UserService } from './core/user.service';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
-import { AppRoutingModule, RoutingComponents } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { BandsComponent } from './bands/bands.component';
 import { RegisterComponent } from './register/register.component';
-import { UserResolver } from './user/user.resolver';
-import { FanLoginComponent } from './fan-login/fan-login.component';
-import { BandLoginComponent } from './band-login/band-login.component';
+import { EventsComponent } from './events/events.component';
+import { VideosComponent } from './videos/videos.component';
+import { CdFundsComponent } from './cd-funds/cd-funds.component'
+import { BandsByFansComponent } from './bands-by-fans/bands-by-fans.component';
 import { ContactComponent } from './contact/contact.component';
-import { RegisterFanComponent } from './register-fan/register-fan.component';
-import { RegisterBandComponent } from './register-band/register-band.component';
-import { FanForgotPasswordComponent } from './fan-forgot-password/fan-forgot-password.component';
-import { BandForgotPasswordComponent } from './band-forgot-password/band-forgot-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
@@ -45,18 +39,16 @@ import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-ba
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    RoutingComponents,
+    MainPageComponent,
+    BandsComponent,
+    EventsComponent,
+    VideosComponent,
+    CdFundsComponent,
+    BandsByFansComponent,
     LoginComponent,
     UserComponent,
     RegisterComponent,
-    FanLoginComponent,
-    BandLoginComponent,
     ContactComponent,
-    RegisterFanComponent,
-    RegisterBandComponent,
-    FanForgotPasswordComponent,
-    BandForgotPasswordComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
     EditUserComponent,
@@ -79,7 +71,7 @@ import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-ba
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule // imports firebase/auth, only needed for auth features
   ],
-  providers: [AuthService, UserService, UserResolver, AuthGuard],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

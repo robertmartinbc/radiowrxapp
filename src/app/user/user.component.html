@@ -3,16 +3,15 @@
 <div class="container-fluid">
   <div class="row login-box">
     <div class="col-sm-12">
-      <div class="row" *ngIf="authService.userData as user">
+      <div class="row">
         <div class="col-sm-2">
-          <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-            alt="{{user.displayName}}">
+          <img class="align-self-start mr-5 img-thumbnail rounded-circle">
         </div>
         <div class="col-sm-7">
-          <h5><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h5>
-          <p>User ID: <strong>{{user.uid}}</strong></p>
-          <p>Email: <strong>{{user.email}}</strong></p>
-          <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+          <h5><strong></strong></h5>
+          <p>User ID: <strong></strong></p>
+          <p>Email: <strong></strong></p>
+          <p>Email Verified: <strong></strong></p>
         </div>
         <div class="col-sm-3">
           <button class="btn btn-primary btn-block" routerLink="/my-bands-music">Music</button>
@@ -33,7 +32,7 @@
           </button>
         </div>
         <div class="col-sm-3">
-          <button class="btn btn-primary btn-block" routerLink="/main-page" (click)="authService.SignOut()">
+          <button class="btn btn-primary btn-block" routerLink="/main-page">
             Log Out
           </button>
         </div>
