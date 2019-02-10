@@ -18,6 +18,7 @@ import { MyBandsMusicComponent } from './my-bands-music/my-bands-music.component
 import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.component';
 import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
 import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
+import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.component';
 
 import { AuthGuard } from './services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './services/guard/secure-inner-pages.guard';
@@ -37,11 +38,12 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'edit-user', component: EditUserComponent },
-  { path: 'my-bands-events' , component: MyBandsEventsComponent },
-  { path: 'my-bands-music' , component: MyBandsMusicComponent },
-  { path: 'my-bands-videos' , component: MyBandsVideosComponent },
-  { path: 'my-bands-cd-funds' , component: MyBandsCdFundsComponent },
-  { path: 'my-bands-private-parties' , component: MyBandsPrivatePartiesComponent }
+  { path: 'my-bands-events' , component: MyBandsEventsComponent, canActivate: [AuthGuard] },
+  { path: 'my-bands-music' , component: MyBandsMusicComponent, canActivate: [AuthGuard] },
+  { path: 'my-bands-videos' , component: MyBandsVideosComponent, canActivate: [AuthGuard] },
+  { path: 'my-bands-cd-funds' , component: MyBandsCdFundsComponent, canActivate: [AuthGuard] },
+  { path: 'my-bands-private-parties' , component: MyBandsPrivatePartiesComponent, canActivate: [AuthGuard] },
+  { path: 'my-bands-members' , component: MyBandsMembersComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

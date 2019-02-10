@@ -36,6 +36,7 @@ import { MyBandsEventsComponent } from './my-bands-events/my-bands-events.compon
 import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.component';
 import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
 import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
+import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-ba
     MyBandsEventsComponent,
     MyBandsVideosComponent,
     MyBandsCdFundsComponent,
-    MyBandsPrivatePartiesComponent
+    MyBandsPrivatePartiesComponent,
+    MyBandsMembersComponent
   ],
   imports: [
     BrowserModule,
