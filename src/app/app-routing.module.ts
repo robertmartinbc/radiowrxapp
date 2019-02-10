@@ -19,20 +19,23 @@ import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.compon
 import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
 import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
 
+import { AuthGuard } from './services/guard/auth.guard';
+import { SecureInnerPagesGuard } from './services/guard/secure-inner-pages.guard';
+
 const routes: Routes = [
-  { path: '', redirectTo: 'main-page', pathMatch: 'full' },
+  { path: '', redirectTo: 'user', pathMatch: 'full' },
   { path: 'main-page', component: MainPageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'verify-email', component: VerifyEmailComponent },
+  { path: 'login', component: LoginComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'verify-email', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'bands', component: BandsComponent },
   { path: 'events', component: EventsComponent },
   { path: 'videos', component: VideosComponent },
   { path: 'cd-funds', component: CdFundsComponent },
   { path: 'bands-by-fans', component: BandsByFansComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'edit-user', component: EditUserComponent },
   { path: 'my-bands-events' , component: MyBandsEventsComponent },
   { path: 'my-bands-music' , component: MyBandsMusicComponent },
