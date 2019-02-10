@@ -16,27 +16,27 @@
         <div class="col-sm-3">
           <button class="btn btn-primary btn-block" routerLink="/my-bands-music">Music</button>
           <button class="btn btn-primary btn-block" routerLink="/my-bands-events">Events</button>
-          <button class="btn btn-primary btn-block">Videos</button>
-          <button class="btn btn-primary btn-block">CD Funds</button>
-          <button class="btn btn-primary btn-block">Private Parties</button>
+          <button class="btn btn-primary btn-block" routerLink="/my-bands-videos">Videos</button>
+          <button class="btn btn-primary btn-block" routerLink="/my-bands-cd-funds">CD Funds</button>
+          <button class="btn btn-primary btn-block" routerLink="/my-bands-private-parties">Private Parties</button>
         </div>
       </div>
       <hr />
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
 
         </div>
-        <div class="col-sm-3 spacer">
+        <div class="col-sm-4 spacer">
           <button class="btn btn-danger btn-block" routerLink="/edit-user">
             Edit
           </button>
         </div>
-        <div class="col-sm-3">
-          <button class="btn btn-primary btn-block" routerLink="/main-page">
+        <div class="col-sm-4">
+          <button class="btn btn-primary btn-block" (click)="authService.logOut()">
             Log Out
           </button>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
 
         </div>
       </div>

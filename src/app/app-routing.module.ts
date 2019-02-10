@@ -16,9 +16,11 @@ import { ContactComponent } from './contact/contact.component';
 import { MyBandsEventsComponent } from './my-bands-events/my-bands-events.component';
 import { MyBandsMusicComponent } from './my-bands-music/my-bands-music.component';
 import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.component';
+import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
+import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'user', pathMatch: 'full' },
+  { path: '', redirectTo: 'main-page', pathMatch: 'full' },
   { path: 'main-page', component: MainPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
@@ -34,7 +36,9 @@ const routes: Routes = [
   { path: 'edit-user', component: EditUserComponent },
   { path: 'my-bands-events' , component: MyBandsEventsComponent },
   { path: 'my-bands-music' , component: MyBandsMusicComponent },
-  { path: 'my-bands-videos' , component: MyBandsVideosComponent }
+  { path: 'my-bands-videos' , component: MyBandsVideosComponent },
+  { path: 'my-bands-cd-funds' , component: MyBandsCdFundsComponent },
+  { path: 'my-bands-private-parties' , component: MyBandsPrivatePartiesComponent }
 ];
 
 @NgModule({

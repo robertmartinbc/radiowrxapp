@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'page-login',
@@ -13,6 +14,7 @@ export class LoginComponent {
   errorMessage: string = '';
 
   constructor(
+    public authService: AuthService,
     private router: Router,
     private fb: FormBuilder
   ) {

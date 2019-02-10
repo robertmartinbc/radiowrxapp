@@ -1,27 +1,37 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-
-    <div class="authBlock">
-      <h3>Thank You for Registering</h3>
-
-      <div class="formGroup" *ngIf="authService.userData as user">
-        <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
-        <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
-      </div>
-
-      <!-- Calling SendVerificationMail() method using authService Api -->
-      <div class="formGroup">
-        <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
-          <i class="fas fa-redo-alt"></i>
-          Resend Verification Email
-        </button>
-      </div>
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container">
+  <h5 class="statement-text">Thank You for Registering!</h5>
+  <div class="row" *ngIf="authService.userData as user">
+    <div class="col-sm-12 statement-text">
+      <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+      <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+    </div>
+  </div>
+  <div class="row statement-text">
+    <div class="col-sm-4">
 
     </div>
-
-    <div class="redirectToLogin">
-      <span>Go back to?<span class="redirect" routerLink="/sign-in"> Sign in</span></span>
+    <div class="col-sm-4">
+      <button class="btn btn-primary btn-block" (click)="authService.sendVerificationEmail()">
+        Resend Verification Email
+      </button>
     </div>
+    <div class="col-sm-4">
 
+    </div>
+  </div>
+  <div class="row statement-text">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4">
+      <button class="btn btn-danger btn-block" routerLink="/login">
+
+        Back to login
+      </button>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
   </div>
 </div>
