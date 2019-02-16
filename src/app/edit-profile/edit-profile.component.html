@@ -1,0 +1,40 @@
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container">
+  <div class="row login-box shadow">
+    <div class="col-sm-12 statement-text">
+      Edit Your profile
+        <form [formGroup]="createProfileForm">
+          <div class="row">
+          <div class="col-sm-4">
+            <input formControlName="artistName" value="{{artistName}}" name="artistName" id="artistName" class="form-control" placeholder="Artist Name" />
+          </div>
+          <div class="col-sm-4">
+            <input formControlName="artistGenre" name="artistGenre" id="artistGenre" class="form-control" placeholder="Genre" />
+          </div>
+          <div class="col-sm-4">
+            <select formControlName="artistInstrument" name="artistInstrument" id="artistInstrument" class="form-control">
+              <option>Vocals</option>
+              <option>Guitar</option>
+              <option>Piano</option>
+              <option>Bass</option>
+            </select>
+          </div>
+          </div>
+        </form>
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-danger btn-block" (click)="createProfile()">Update</button>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-primary btn-block" routerLink="/profile">Cancel</button>
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

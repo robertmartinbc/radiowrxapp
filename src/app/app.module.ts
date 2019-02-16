@@ -37,6 +37,10 @@ import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.compon
 import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
 import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
 import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.component';
+import { BandProfileComponent } from './band-profile/band-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -60,7 +64,11 @@ import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.com
     MyBandsVideosComponent,
     MyBandsCdFundsComponent,
     MyBandsPrivatePartiesComponent,
-    MyBandsMembersComponent
+    MyBandsMembersComponent,
+    BandProfileComponent,
+    EditProfileComponent,
+    CreateProfileComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

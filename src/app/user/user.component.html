@@ -1,8 +1,10 @@
 
-<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3><div class="container">
-<div class="container-fluid">
-  <div class="row login-box">
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container-fluid" no-padding>
+  <div class="row login-box shadow">
     <div class="col-sm-12">
+      <h5 class="statement-text">User Profile</h5>
+      <hr />
       <div class="row" *ngIf="authService.userData as user">
         <div class="col-sm-2">
           <img class="align-self-start mr-5 img-thumbnail rounded-circle">
@@ -12,6 +14,10 @@
           <p>User ID: <strong>{{user.uid}}</strong></p>
           <p>Email: <strong>{{user.email}}</strong></p>
           <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+          <p>Artist:</p>
+          <p>Genre:</p>
+          <p>Year Formed:</p>
+          <input type="text" value="band" name="bandName" class="form-control" />
         </div>
         <div class="col-sm-3">
           <button class="btn btn-primary btn-block" routerLink="/my-bands-music">Music</button>
@@ -24,20 +30,25 @@
       </div>
       <hr />
       <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-1">
 
         </div>
-        <div class="col-sm-4 spacer">
-          <button class="btn btn-danger btn-block" routerLink="/edit-user">
+        <div class="col-sm-3 spacer">
+          <button class="btn btn-danger btn-block" routerLink="/edit-profile">
             Edit
           </button>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3 spacer">
+          <button class="btn btn-danger btn-block" routerLink="/band-profile">
+            Update
+          </button>
+        </div>
+        <div class="col-sm-3">
           <button class="btn btn-primary btn-block" (click)="authService.logOut()">
             Log Out
           </button>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-1">
 
         </div>
       </div>

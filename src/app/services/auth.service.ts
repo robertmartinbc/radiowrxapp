@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../services/user';
+import { Profile } from '../services/profile';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -10,6 +11,8 @@ import { Router } from "@angular/router";
 })
 export class AuthService {
   userData: any; //Save logged in user data
+  profileData: any;
+  docId: string;
 
   constructor(
     public afs: AngularFirestore,
@@ -35,7 +38,7 @@ export class AuthService {
   async login(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
     .then((result) => {
-      this.router.navigate(['user']);
+      this.router.navigate(['create-profile']);
       this.setUserData(result.user);
     }).catch((error) => {
       alert(error.message);
@@ -43,11 +46,15 @@ export class AuthService {
 }
 
   // Register new user
-  async register(email: string, password: string) {
+  async register(email: string, password: string, profile, member, album, song) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
     .then((result) => {
       this.sendVerificationEmail();
       this.setUserData(result.user);
+      //this.setProfileData(profile, result.user);
+      //this.setBandMemberData(member, result.user);
+      //this.setBandAlbumData(album, result.user);
+      //this.setBandSongData(song, result.user);
     }).catch((error) => {
       alert(error.message);
     })
@@ -72,7 +79,7 @@ forgotPassword(passwordResetEmail) {
   })
 }
 
-//Set up user data for login and refister feature
+//Set up user data for login and register feature
 setUserData(user) {
   const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
   const userData: User = {
@@ -85,6 +92,61 @@ setUserData(user) {
   return userRef.set(userData, {
     merge: true
   })
+}
+
+// SEt Up Band Profile database
+setProfileData(profile) {
+  this.docId = localStorage.getItem('id');
+  const currentUser = this.afAuth.auth.currentUser.uid;
+  const profileRef = this.afs.doc(`users/${currentUser}`).collection('profiles').add({
+    //artistName: profile.artistName,
+    //artistGenre: profile.artistGenre,
+    //artistInstrument: profile.artistInstrument
+    /*bandName: profile.bandName,
+    id: profile.id,
+    genre: profile.genre,
+    email: profile.email,
+    displayName: profile.displayName,
+    photoURL: profile.photoURL*/
+  });
+  console.log(this.docId);
+  console.log(profile.artistName);
+}
+
+setBandMemberData(user, member) {
+  const currentUser = this.afAuth.auth.currentUser.uid;
+  const memberRef = this.afs.doc(`users/${currentUser}`).collection('members').add({
+    /*bandName: profile.bandName,
+    id: profile.id,
+    genre: profile.genre,
+    email: profile.email,
+    displayName: profile.displayName,
+    photoURL: profile.photoURL*/
+  });
+}
+
+setBandAlbumData(user, album) {
+  const currentUser = this.afAuth.auth.currentUser.uid;
+  const albumRef = this.afs.doc(`users/${currentUser}`).collection('album').add({
+    /*bandName: profile.bandName,
+    id: profile.id,
+    genre: profile.genre,
+    email: profile.email,
+    displayName: profile.displayName,
+    photoURL: profile.photoURL*/
+  });
+}
+
+setBandSongData(user, song) {
+  const currentUser = this.afAuth.auth.currentUser.uid;
+  const songRef = this.afs.doc(`users/${currentUser}`).collection('album').doc(currentUser).collection('songs').add({
+    /*bandName: profile.bandName,
+    id: profile.id,
+    genre: profile.genre,
+    email: profile.email,
+    displayName: profile.displayName,
+    photoURL: profile.photoURL*/
+  });
 }
 
   // Returns true when user is logged in and email is verified
