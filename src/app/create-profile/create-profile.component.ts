@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
-import { User } from '../services/user';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { AngularFireAuth } from "@angular/fire/auth";
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+//import { AuthService } from '../services/auth.service';
 import { Router } from "@angular/router";
+import { ProfileService } from '../shared/services/profile.service';
 
 
 
@@ -15,105 +13,56 @@ import { Router } from "@angular/router";
 })
 export class CreateProfileComponent implements OnInit {
 
-  createProfileForm: FormGroup;
-  submitted = false;
+  profileForm: FormGroup;
 
-  //Form statement
-  loading = false;
-  success = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private afs: AngularFirestore,
     private router: Router,
-    private afAuth: AngularFireAuth
+    public profileService: ProfileService
   ) { }
 
   ngOnInit() {
-    this.createProfileForm = this.formBuilder.group({
-      artistName: ['', Validators.required],
-      artistGenre: ['', Validators.required],
-      yearFormed: ['', Validators.required],
-      addressOne: ['', Validators.required],
-      addressTwo: ['', Validators.required],
-      artistTown: ['', Validators.required],
-      artistCountry: ['', Validators.required],
-      postCode: ['', Validators.required],
-      contactNumber: ['', Validators.required]
+    this.createForm()
+  }
+
+  createForm() {
+    this.profileForm = this.formBuilder.group({
+      artistImage: ['', Validators.required ],
+      artistName: ['', Validators.required] ,
+      artistGenre: ['', Validators.required ],
+      yearFormed: ['', Validators.required ],
+      addressOne: ['', Validators.required ],
+      addressTwo: ['', Validators.required ],
+      artistTown: ['', Validators.required ],
+      artistCountry: ['', Validators.required] ,
+      postCode: ['', Validators.required ],
+      contactNumber: ['', Validators.required ]
     })
   }
 
-  // Covenience getters for easy acceess to form fields
-  get artistName() {
-    return this.createProfileForm.get('artistName');
+  resetFields() {
+    this.profileForm = this.formBuilder.group({
+      artistImage: new FormControl('', Validators.required ),
+      artistName: new FormControl('', Validators.required ),
+      artistGenre: new FormControl('', Validators.required ),
+      yearsFormed: new FormControl('', Validators.required ),
+      addressOne: new FormControl('', Validators.required ),
+      addressTwo: new FormControl('', Validators.required ),
+      artistTown: new FormControl('', Validators.required ),
+      artistCountry: new FormControl('', Validators.required ),
+      postCode: new FormControl('', Validators.required ),
+      contactNumber: new FormControl('', Validators.required )
+    })
   }
 
-  get artistGenre() {
-    return this.createProfileForm.get('artistGenre');
+  onSubmit(value){
+    this.profileService.createProfile(value)
+    .then(
+      res => {
+        this.resetFields();
+        this.router.navigate(['/profile']);
+      }
+    )
   }
-
-  get yearFormed() {
-    return this.createProfileForm.get('yearFormed');
-  }
-
-  get addressOne() {
-    return this.createProfileForm.get('addressOne');
-  }
-
-  get ddressTwo() {
-    return this.createProfileForm.get('addressTwo');
-  }
-
-  get artistTown() {
-    return this.createProfileForm.get('artistTown');
-  }
-
-  get artistCountry() {
-    return this.createProfileForm.get('artistCountry');
-  }
-
-  get postCode() {
-    return this.createProfileForm.get('postCode');
-  }
-
-  get contactNumber() {
-    return this.createProfileForm.get('contactNumber');
-  }
-
-  //Submit data to create profile
-  async submitHandler() {
-    this.loading = true;
-
-    const formValue = this.createProfileForm.value;
-    const currentUser = this.afAuth.auth.currentUser.uid;
-
-    try {
-      await this.afs.doc(`users/${currentUser}`).collection('profiles').add(formValue);
-      this.success = true;
-    } catch(err) {
-      console.error(err)
-    }
-    this.loading = false;
-  }
-
-  // Create Profile for each registered User
-  /*onSubmit() {
-    this.submitted = true;
-    //const formValue = this.createProfileForm.value;
-    //const currentUser = this.afAuth.auth.currentUser.uid;
-
-    // stop here if form is invalid
-    if (this.createProfileForm.invalid) {
-      return;
-    }
-
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.createProfileForm.value))
-
-    /*try {
-      this.afs.doc(`users/${currentUser}`).collection('profiles').add(formValue);
-    } catch(err) {
-      console.error(err)
-    }
-    this.router.navigate(['profile']);
-    console.log(currentUser)*/
-  }
+}
