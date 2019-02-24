@@ -4,7 +4,7 @@
     <div class="col-sm-12">
       <h5 class="statement-text create-header">Create Your Profile</h5>
       <hr class="create-hr-style" />
-      <form [formGroup]="profileForm"  (ngSubmit)="onSubmit(profileForm.value)">
+      <form [formGroup]="profileForm"  (ngSubmit)="submitProfileData()">
         <div class="form-row">
           <div class="col-sm-3 form-group">
             <label class="create-label-style">Artist Name</label>

@@ -13,7 +13,7 @@ import { ProfileService } from '../shared/services/profile.service';
 })
 export class CreateProfileComponent implements OnInit {
 
-  profileForm: FormGroup;
+  public profileForm: FormGroup;
 
 
   constructor(
@@ -23,10 +23,79 @@ export class CreateProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.createForm()
+    this.profileService.getProfilesList();
+    this.profilForm()
   }
 
-  createForm() {
+  // Reactive Profile Form
+  profilForm() {
+    this.profileForm = this.formBuilder.group({
+      artistName: ['', Validators.required],
+      artistGenre: ['', Validators.required],
+      yearFormed: ['', Validators.required],
+      addressOne: ['', Validators.required],
+      addressTwo: ['', Validators.required],
+      artistTown: ['', Validators.required],
+      artistCountry: ['', Validators.required],
+      postCode: ['', Validators.required],
+      contactNumber: ['', Validators.required]
+      //artistImage: ['', Validators.required],
+    })
+  }
+
+  // Accessing form control using getters
+  get artistName() {
+    return this.profileForm.get('artistName');
+  }
+
+  get artistGenre() {
+    return this.profileForm.get('artistGenre');
+  }
+
+  get yearFormed() {
+    return this.profileForm.get('yearFormed');
+  }
+
+  get addressOne() {
+    return this.profileForm.get('addressOne');
+  }
+
+  get addressTwo() {
+    return this.profileForm.get('addressTwo');
+  }
+
+  get artistTown() {
+    return this.profileForm.get('artistTown');
+  }
+
+  get artistCountry() {
+    return this.profileForm.get('artistCountry');
+  }
+
+  get postCode() {
+    return this.profileForm.get('postCode');
+  }
+
+  get contactNumber() {
+    return this.profileForm.get('contactNumber');
+  }
+
+  get artistImage() {
+    return this.profileForm.get('artistImage');
+  }
+
+  // Reset profile forms values
+  resetForm() {
+    this.profileForm.reset();
+  }
+
+  // Submit profile form data to Firebase
+  submitProfileData() {
+    this.profileService.createProfile(this.profileForm.value);
+    this.resetForm();
+    this.router.navigate(['profile']);
+  }
+  /*createForm() {
     this.profileForm = this.formBuilder.group({
       artistImage: ['', Validators.required ],
       artistName: ['', Validators.required] ,
@@ -64,5 +133,5 @@ export class CreateProfileComponent implements OnInit {
         this.router.navigate(['/profile']);
       }
     )
-  }
+  }*/
 }

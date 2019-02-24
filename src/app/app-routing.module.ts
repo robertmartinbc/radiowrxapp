@@ -22,7 +22,6 @@ import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.com
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
-import { EditProfileResolver } from './edit-profile/edit-profile.resolver';
 
 import { AuthGuard } from './shared/services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './shared/services/guard/secure-inner-pages.guard';
@@ -48,10 +47,9 @@ const routes: Routes = [
   { path: 'my-bands-cd-funds' , component: MyBandsCdFundsComponent, canActivate: [AuthGuard] },
   { path: 'my-bands-private-parties' , component: MyBandsPrivatePartiesComponent, canActivate: [AuthGuard] },
   { path: 'my-bands-members' , component: MyBandsMembersComponent, canActivate: [AuthGuard] },
-  { path: 'edit-profile', component: EditProfileComponent },
+  { path: 'edit-profile/:id', component: EditProfileComponent },
   { path: 'create-profile', component: CreateProfileComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'details/:id', component: EditProfileComponent, resolve:{data : EditProfileResolver} }
 ];
 
 @NgModule({

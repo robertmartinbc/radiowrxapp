@@ -1,24 +1,77 @@
 import { Injectable } from '@angular/core';
+import { Profile } from '../../shared/profile';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 //import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 //import { User } from '../services/user';
 //import { auth } from 'firebase/app';
 //import { AngularFireAuth } from "@angular/fire/auth";
-import { AngularFirestore } from '@angular/fire/firestore';
+//import { AngularFirestore } from '@angular/fire/firestore';
 //import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
+  profilesRef: AngularFireList<any>;
+  profileRef: AngularFireObject<any>;
+
   //formData: Profile;
 
   constructor(
-    public db: AngularFirestore
+    public db: AngularFireDatabase
     //public afAuth: AngularFireAuth,
     //public router: Router
   ) { }
 
-  getAvatars() {
+  //Create Profile
+  createProfile(profile: Profile) {
+    this.profilesRef.push({
+      artistName: profile.artistName,
+      artistGenre: profile.artistGenre,
+      yearFormed: profile.yearFormed,
+      addressOne: profile.addressOne,
+      addressTwo: profile.addressTwo,
+      artistTown: profile.artistTown,
+      artistCountry: profile.artistCountry,
+      postCode: profile.postCode,
+      contactNumber: profile.contactNumber
+      //artistImage: profile.artistImage
+    })
+  }
+  //Fetch Single Profile AngularFireObject
+  getProfile(id: string) {
+    this.profileRef = this.db.object('profiles-list/' + id);
+    return this.profileRef;
+  }
+  // Fetch Students list
+  getProfilesList() {
+    this. profilesRef = this.db.list('profiles-list');
+    return this.profilesRef;
+  }
+
+  //Update Profile object
+  updateProfile(profile: Profile) {
+    this.profileRef.update({
+      artistName: profile.artistName,
+      artistGenre: profile.artistGenre,
+      yearFormed: profile.yearFormed,
+      addressOne: profile.addressOne,
+      addressTwo: profile.addressTwo,
+      artistTown: profile.artistTown,
+      artistCountry: profile.artistCountry,
+      postCode: profile.postCode,
+      contactNumber: profile.contactNumber
+      //artistImage: profile.artistImage
+    })
+  }
+
+  //Delete Profile object
+  deleteProfile(id: string) {
+    this.profileRef = this.db.object('profiles-list/' + id);
+  }
+
+
+  /*getAvatars() {
     return this.db.collection('/avatar').valueChanges()
   }
 
@@ -62,6 +115,6 @@ export class ProfileService {
       postCode: value.postCode,
       contactNumber: value.contactNumber
     })
-  }
+  }*/
 
 }
