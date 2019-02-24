@@ -10,7 +10,7 @@ import { Router, Params } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
 
-  items: Array<any>
+  items: Array<any>;
 
   constructor(
     public profileService: ProfileService,

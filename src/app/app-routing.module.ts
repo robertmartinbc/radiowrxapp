@@ -19,14 +19,13 @@ import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.compon
 import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
 import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
 import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.component';
-import { BandProfileComponent } from './band-profile/band-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { EditProfileResolver } from './edit-profile/edit-profile.resolver';
 
-import { AuthGuard } from './services/guard/auth.guard';
-import { SecureInnerPagesGuard } from './services/guard/secure-inner-pages.guard';
+import { AuthGuard } from './shared/services/guard/auth.guard';
+import { SecureInnerPagesGuard } from './shared/services/guard/secure-inner-pages.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main-page', pathMatch: 'full' },
@@ -49,7 +48,6 @@ const routes: Routes = [
   { path: 'my-bands-cd-funds' , component: MyBandsCdFundsComponent, canActivate: [AuthGuard] },
   { path: 'my-bands-private-parties' , component: MyBandsPrivatePartiesComponent, canActivate: [AuthGuard] },
   { path: 'my-bands-members' , component: MyBandsMembersComponent, canActivate: [AuthGuard] },
-  { path: 'band-profile' , component: BandProfileComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'create-profile', component: CreateProfileComponent },
   { path: 'profile', component: ProfileComponent },

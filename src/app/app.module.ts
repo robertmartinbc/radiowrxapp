@@ -37,7 +37,6 @@ import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.compon
 import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
 import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
 import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.component';
-import { BandProfileComponent } from './band-profile/band-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditProfileResolver } from './edit-profile/edit-profile.resolver';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
@@ -66,7 +65,6 @@ import { ProfileComponent } from './profile/profile.component';
     MyBandsCdFundsComponent,
     MyBandsPrivatePartiesComponent,
     MyBandsMembersComponent,
-    BandProfileComponent,
     EditProfileComponent,
     CreateProfileComponent,
     ProfileComponent
