@@ -82,4 +82,8 @@ export class EditProfileComponent implements OnInit {
       }
     )
   }
+
+  cancel(){
+    this.router.navigate(['/profile']);
+  }
 }

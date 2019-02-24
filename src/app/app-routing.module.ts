@@ -23,6 +23,7 @@ import { BandProfileComponent } from './band-profile/band-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { EditProfileResolver } from './edit-profile/edit-profile.resolver';
 
 import { AuthGuard } from './services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './services/guard/secure-inner-pages.guard';
@@ -51,7 +52,8 @@ const routes: Routes = [
   { path: 'band-profile' , component: BandProfileComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'create-profile', component: CreateProfileComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'details/:id', component: EditProfileComponent, resolve:{data : EditProfileResolver} }
 ];
 
 @NgModule({

@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { LoginComponent }  from './login/login.component';
 import { UserComponent } from './user/user.component';
-import { FormsModule } from '@angular/forms';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { ProfileService } from './shared/services/profile.service';
 
-import { AuthService } from './services/auth.service';
+import { AuthService } from './shared/services/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +39,7 @@ import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-ba
 import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.component';
 import { BandProfileComponent } from './band-profile/band-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditProfileResolver } from './edit-profile/edit-profile.resolver';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -83,7 +84,7 @@ import { ProfileComponent } from './profile/profile.component';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule // imports firebase/auth, only needed for auth features
   ],
-  providers: [AuthService],
+  providers: [AuthService, ProfileService, EditProfileResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

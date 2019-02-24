@@ -4,27 +4,30 @@
     <div class="col-sm-12">
       <h5 class="statement-text">Profile</h5>
       <hr />
-      <div class="row" *ngIf="authService.userData as user">
-        <div class="col-sm-2">
-          <img class="align-self-start mr-5 img-thumbnail rounded-circle">
-        </div>
-        <div class="col-sm-7">
-          <h5>Hello <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h5>
-          <p>User ID: <strong>{{user.uid}}</strong></p>
-          <p>Email: <strong>{{user.email}}</strong></p>
-          <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-          <p>Artist:</p>
-          <p>Genre:</p>
-          <p>Year Formed:</p>
-          <input type="text" value="band" name="bandName" class="form-control" />
-        </div>
-        <div class="col-sm-3">
-          <button class="btn btn-primary btn-block" routerLink="/my-bands-music">Music</button>
-          <button class="btn btn-primary btn-block" routerLink="/my-bands-members">Band Members</button>
-          <button class="btn btn-primary btn-block" routerLink="/my-bands-events">Events</button>
-          <button class="btn btn-primary btn-block" routerLink="/my-bands-videos">Videos</button>
-          <button class="btn btn-primary btn-block" routerLink="/my-bands-cd-funds">CD Funds</button>
-          <button class="btn btn-primary btn-block" routerLink="/my-bands-private-parties">Private Parties</button>
+      <div *ngFor="let item of items">
+        <div class="row">
+          <div class="col-sm-2">
+            <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+          </div>
+          <div class="col-sm-7">
+            <p>Artist: {{item.payload.doc.data().artistName}}</p>
+            <p>Genre: {{item.payload.doc.data().artistGenre}}</p>
+            <p>Year Formed: {{item.payload.doc.data().yearFormed}}</p>
+            <p>Address: {{item.payload.doc.data().addressOne}}</p>
+            <p>Address: {{item.payload.doc.data().addressTwo}}</p>
+            <p>Town: {{item.payload.doc.data().artistTown}}</p>
+            <p>Country: {{item.payload.doc.data().artistCountry}}</p>
+            <p>Post Code: {{item.payload.doc.data().postCode}}</p>
+            <p>Contact: {{item.payload.doc.data().contactNumber}}</p>
+          </div>
+          <div class="col-sm-3">
+            <button class="btn btn-primary btn-block" routerLink="/my-bands-music">Music</button>
+            <button class="btn btn-primary btn-block" routerLink="/my-bands-members">Band Members</button>
+            <button class="btn btn-primary btn-block" routerLink="/my-bands-events">Events</button>
+            <button class="btn btn-primary btn-block" routerLink="/my-bands-videos">Videos</button>
+            <button class="btn btn-primary btn-block" routerLink="/my-bands-cd-funds">CD Funds</button>
+            <button class="btn btn-primary btn-block" routerLink="/my-bands-private-parties">Private Parties</button>
+          </div>
         </div>
       </div>
       <hr />
@@ -33,7 +36,7 @@
 
         </div>
         <div class="col-sm-3 spacer">
-          <button class="btn btn-danger btn-block" routerLink="/edit-profile">
+          <button class="btn btn-danger btn-block" (click)="editProfile(item)">
             Edit
           </button>
         </div>
