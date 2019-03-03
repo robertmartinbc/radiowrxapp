@@ -18,21 +18,21 @@
         <div class="col-sm-4">
         </div>
       </div>
-      <div *ngFor="let profile of Profile">
+      <div *ngFor="let item of items">
         <div class="row">
           <div class="col-sm-2">
             <img class="align-self-start mr-5 img-thumbnail rounded-circle">
           </div>
           <div class="col-sm-7">
-            <p>Artist: {{profile.artistName}}</p>
-            <p>Genre: {{profile.artistGenre}}</p>
-            <p>Year Formed: {{profile.yearFormed}}</p>
-            <p>Address: {{profile.addressOne}}</p>
-            <p>Address: {{profile.addressTwo}}</p>
-            <p>Town: {{profile.artistTown}}</p>
-            <p>Country: {{profile.artistCountry}}</p>
-            <p>Post Code: {{profile.postCode}}</p>
-            <p>Contact: {{profile.contactNumber}}</p>
+            <p>Artist: {{item.payload.doc.data().artistName}}</p>
+            <p>Genre: {{item.payload.doc.data().artistGenre}}</p>
+            <p>Year Formed: {{item.payload.doc.data().yearFormed}}</p>
+            <p>Address: {{item.payload.doc.data().addressOne}}</p>
+            <p>Address: {{item.payload.doc.data().addressTwo}}</p>
+            <p>Town: {{item.payload.doc.data().artistTown}}</p>
+            <p>Country: {{item.payload.doc.data().artistCountry}}</p>
+            <p>Post Code: {{item.payload.doc.data().postCode}}</p>
+            <p>Contact: {{item.payload.doc.data().contactNumber}}</p>
           </div>
           <div class="col-sm-3">
             <button class="btn btn-primary btn-block" routerLink="/my-bands-music">Music</button>
@@ -49,7 +49,7 @@
 
           </div>
           <div class="col-sm-3 spacer">
-            <button type="submit" class="btn btn-danger btn-block" routerLink="/edit-profile/{{profile.$key}}">
+            <button type="submit" class="btn btn-danger btn-block" (click)="viewProfile(item)">
               Edit
             </button>
           </div>

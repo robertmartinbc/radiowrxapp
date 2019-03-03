@@ -1,14 +1,13 @@
-export interface Profile {
+export class Profile {
   id: string;
-  //artistImage: string;
   artistName: string;
   artistGenre: string;
-  artistImage: string;
   yearFormed: string;
+  artistImage: string;
   addressOne: string;
   addressTwo: string;
-  artistTown: string;
   artistCountry: string;
+  artistTown: string;
   postCode: string;
   contactNumber: string;
 }

@@ -4,13 +4,13 @@
     <div class="col-sm-12">
       <h5 class="statement-text create-header">Edit Your Profile</h5>
       <hr class="create-hr-style" />
-      <form [formGroup]="editForm"  (ngSubmit)="updateForm()">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)">
         <div class="form-row">
-          <div class="col-sm-3 form-group">
+          <div class="col-sm-4 form-group">
             <label class="create-label-style">Artist Name</label>
-            <input type="text" formControlName="artistName" class="form-control form-control-sm" placeholder="Artist Name" required />
+            <input formControlName="artistName" class="form-control form-control-sm" placeholder="Artist Name" required />
           </div>
-          <div class="col-sm-3 form-group">
+          <div class="col-sm-4 form-group">
             <label class="create-label-style">Genre</label>
             <select formControlName="artistGenre" class="form-control form-control-sm" placeholder="Genre" required>
               <option value="rock">Rock</option>
@@ -20,43 +20,39 @@
               <option value="country">Country</option>
             </select>
           </div>
-          <div class="col-sm-3 form-group">
+          <div class="col-sm-4 form-group">
             <label class="create-label-style">Year Formed</label>
-            <input type="text" formControlName="yearFormed" class="form-control form-control-sm" placeholder="Year Formed" required />
-          </div>
-          <div class="col-sm-3 form-group">
-            <!--<label class="create-label-style">Profile Image</label>
-            <input type="file" formControlName="artistImage" class="form-control form-control-sm" required />-->
+            <input formControlName="yearFormed" class="form-control form-control-sm" placeholder="Year Formed" required />
           </div>
         </div>
         <hr class="create-hr-style" />
         <div class="form-row">
           <div class="col-sm-8 form-group">
             <label class="create-label-style">Address</label>
-              <input type="text" formControlName="addressOne" class="form-control form-control-sm" placeholder="Street Address" required />
+              <input formControlName="addressOne" class="form-control form-control-sm" placeholder="Street Address" required />
           </div>
           <div class="col-sm-4 form-group">
             <label class="create-label-style">Suite Appt. No.</label>
-            <input type="text" formControlName="addressTwo" class="form-control form-control-sm" placeholder="Suite/Appt. No." required />
+            <input formControlName="addressTwo" class="form-control form-control-sm" placeholder="Suite/Appt. No." required />
           </div>
         </div>
         <hr class="create-hr-style" />
         <div class="form-row">
           <div class="col-sm-3 form-group">
             <label class="create-label-style">Town</label>
-            <input type="text" formControlName="artistTown" class="form-control form-control-sm" placeholder="Town" required />
+            <input formControlName="artistTown" class="form-control form-control-sm" placeholder="Town" required />
           </div>
           <div class="col-sm-3 form-group">
             <label class="create-label-style">Country</label>
-            <input type="text" formControlName="artistCountry" class="form-control form-control-sm" placeholder="Country" required />
+            <input formControlName="artistCountry" class="form-control form-control-sm" placeholder="Country" required />
           </div>
           <div class="col-sm-3 form-group">
             <label class="create-label-style">Postcode</label>
-            <input type="text" formControlName="postCode" class="form-control form-control-sm" placeholder="Postcode" required />
+            <input formControlName="postCode" class="form-control form-control-sm" placeholder="Postcode" required />
           </div>
           <div class="col-sm-3 form-group">
             <label class="create-label-style">Contact No.</label>
-            <input type="text" formControlName="contactNumber" class="form-control form-control-sm" placeholder="Contact Number" required />
+            <input formControlName="contactNumber" class="form-control form-control-sm" placeholder="Contact Number" required />
           </div>
 
         </div>

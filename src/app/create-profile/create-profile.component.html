@@ -4,13 +4,13 @@
     <div class="col-sm-12">
       <h5 class="statement-text create-header">Create Your Profile</h5>
       <hr class="create-hr-style" />
-      <form [formGroup]="profileForm"  (ngSubmit)="submitProfileData()">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm.value)">
         <div class="form-row">
-          <div class="col-sm-3 form-group">
+          <div class="col-sm-4 form-group">
             <label class="create-label-style">Artist Name</label>
             <input type="text" formControlName="artistName" class="form-control form-control-sm" placeholder="Artist Name" required />
           </div>
-          <div class="col-sm-3 form-group">
+          <div class="col-sm-4 form-group">
             <label class="create-label-style">Genre</label>
             <select formControlName="artistGenre" class="form-control form-control-sm" placeholder="Genre" required>
               <option value="rock">Rock</option>
@@ -20,13 +20,9 @@
               <option value="country">Country</option>
             </select>
           </div>
-          <div class="col-sm-3 form-group">
+          <div class="col-sm-4 form-group">
             <label class="create-label-style">Year Formed</label>
             <input type="text" formControlName="yearFormed" class="form-control form-control-sm" placeholder="Year Formed" required />
-          </div>
-          <div class="col-sm-3 form-group">
-            <label class="create-label-style">Profile Image</label>
-            <input type="file" formControlName="artistImage" class="form-control form-control-sm" required />
           </div>
         </div>
         <hr class="create-hr-style" />
@@ -66,7 +62,7 @@
 
           </div>
           <div class="col-sm-3 form-group">
-            <button type="submit" class="btn btn-primary btn-block" [disabled]="profileForm.invalid">Update</button>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="profileForm.invalid">Create</button>
           </div>
           <div class=" form-group col-sm-3">
             <button type="submit" class="btn btn-danger btn-block" routerLink="/profile">Cancel</button>

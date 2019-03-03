@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
-//import { AngularFirestore } from 'angularfire2/firestore';
-//import { User } from '../services/user';
-//import { AuthService } from '../shared/services/auth.service';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { AvatarDialogComponent } from "../avatar-dialog/avatar-dialog.component";
 import { ProfileService } from '../shared/services/profile.service';
-//import { AngularFireAuth } from "@angular/fire/auth";
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -16,132 +14,68 @@ import { ProfileService } from '../shared/services/profile.service';
 export class EditProfileComponent implements OnInit {
 
   editForm: FormGroup;
+  item: any;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
     public profileService: ProfileService,
-    private location: Location
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private afAuth: AuthService
+
   ) {
 
     }
 
   // Initiate Reactive Form to create profiles.
   ngOnInit() {
-    this.updateProfileData();
-    const id = this.route.snapshot.paramMap.get('id');
-    this.profileService.getProfile(id).valueChanges().subscribe(data => {
-      this.editForm.setValue(data);
-    })
-  }
-
-  // Accessing form control using getters
-  get artistName() {
-    return this.editForm.get('artistName');
-  }
-
-  get artistGenre() {
-    return this.editForm.get('artistGenre');
-  }
-
-  get yearFormed() {
-    return this.editForm.get('yearFormed');
-  }
-
-  get addressOne() {
-    return this.editForm.get('addressOne');
-  }
-
-  get addressTwo() {
-    return this.editForm.get('addressTwo');
-  }
-
-  get artistTown() {
-    return this.editForm.get('artistTown');
-  }
-
-  get artistCountry() {
-    return this.editForm.get('artistCountry');
-  }
-
-  get postCode() {
-    return this.editForm.get('postCode');
-  }
-
-  get contactNumber() {
-    return this.editForm.get('contactNumber');
-  }
-
-  get artistImage() {
-    return this.editForm.get('artistImage');
-  }
-
-  updateProfileData() {
-    this.editForm = this.formBuilder.group({
-      artistName: ['', Validators.required],
-      artistGenre: ['', Validators.required],
-      yearFormed: ['', Validators.required],
-      addressOne: ['', Validators.required],
-      addressTwo: ['', Validators.required],
-      artistTown: ['', Validators.required],
-      artistCountry: ['', Validators.required],
-      postCode: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      artistImage: ['', Validators.required],
-    })
-  }
-
-  goBack() {
-    this.location.back();
-  }
-
-  updateForm() {
-    this.profileService.updateProfile(this.editForm.value);
-    this.router.navigate(['profile']);
-  }
-
-  cancel(){
-    this.router.navigate(['/profile']);
-  }
-}
-
-
-    /*this.route.data.subscribe(routeData => {
+    this.route.data.subscribe(routeData => {
       let data = routeData['data'];
-      this.item = data.payload.data();
-      this.item.id = data.payload.id;
-    })*/
-
-  /*createForm() {
-    this.profileForm = this.formBuilder.group({
-      artistImage: ['', Validators.required ],
-      artistName: ['', Validators.required ],
-      artistGenre: ['', Validators.required ],
-      yearsFormed: ['', Validators.required ],
-      addressOne: ['', Validators.required ],
-      addressTwo: ['', Validators.required ],
-      artistTown: ['', Validators.required ],
-      artistCountry: ['', Validators.required ],
-      postCode: ['', Validators.required ],
-      contactNumber: ['', Validators.required ]
+      if (data) {
+        this.item = data.payload.data();
+        this.item.id = data.payload.id;
+        this.editProfileForm();
+      }
     })
   }
 
-  onSubmit(value) {
-    value.image = this.item.image,
-    value.artistName = this.item.artistName;
-    value.artistGenre = this.item.artistGenre;
-    value.yearFormed = this.item.yearFormed;
-    value.addressOne = this.item.addressOne;
-    value.addressTwo = this.item.addressTwo;
-    value.artistTown = this.item.artistTown;
-    value.artistCountry = this.item.artistCountry;
-    value.postCode = this.item.postCode;
-    value.contactNumber = this.item.contactNumber;
+  editProfileForm() {
+    this.editForm = this.fb.group({
+      artistName: [this.item.artistName, Validators.required],
+      artistGenre: [this.item.artistGenre, Validators.required],
+      yearFormed: [this.item.yearFormed, Validators.required],
+      addressOne: [this.item.addressOne, Validators.required],
+      addressTwo: [this.item.addressTwo, Validators.required],
+      artistTown: [this.item.artistTown, Validators.required],
+      artistCountry: [this.item.artistCountry, Validators.required],
+      postCode: [this.item.postCode, Validators.required],
+      contactNumber: [this.item.contactNumber, Validators.required]
+    });
   }
 
-  delete() {
+  /*openDialog() {
+    const dialogRef = this.dialog.open(AvatarDialogComponent, {
+      height: '400px',
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.item.avatar = result.link;
+      }
+    });
+  }*/
+
+  onSubmit(value){
+    this.profileService.updateProfile(this.item.id, value)
+    .then(
+      res => {
+        this.router.navigate(['/profile']);
+      }
+    )
+  }
+
+  delete(){
     this.profileService.deleteProfile(this.item.id)
     .then(
       res => {
@@ -151,4 +85,9 @@ export class EditProfileComponent implements OnInit {
         console.log(err);
       }
     )
-  }*/
+  }
+
+  cancel() {
+    this.router.navigate(['/profile']);
+  }
+}

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 import { LoginComponent }  from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -8,7 +9,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +34,7 @@ import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.com
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileResolver } from './edit-profile/edit-profile.resolver'
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -42,6 +44,7 @@ import { environment } from '../environments/environment';
 import { ProfileService } from './shared/services/profile.service';
 
 import { AuthService } from './shared/services/auth.service';
+import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 
 
 @NgModule({
@@ -68,7 +71,8 @@ import { AuthService } from './shared/services/auth.service';
     MyBandsMembersComponent,
     EditProfileComponent,
     CreateProfileComponent,
-    ProfileComponent
+    ProfileComponent,
+    AvatarDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -78,13 +82,14 @@ import { AuthService } from './shared/services/auth.service';
     CarouselModule.forRoot(),
     BsDropdownModule.forRoot(),
     AngularFontAwesomeModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule // imports firebase/auth, only needed for auth features
   ],
-  providers: [AuthService, ProfileService],
+  providers: [AuthService, ProfileService, EditProfileResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
