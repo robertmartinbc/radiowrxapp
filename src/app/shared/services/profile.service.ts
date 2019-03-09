@@ -6,6 +6,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class ProfileService {
+  userId: string;
 
   constructor(
     private db: AngularFirestore
@@ -18,11 +19,13 @@ export class ProfileService {
   }
 
   getProfile(profileKey) {
-    return this.db.collection('profiles').doc(profileKey).snapshotChanges();
+    this.userId = localStorage.getItem('user');
+    return this.db.collection('users').doc(this.userId).collection('profiles').doc(profileKey).snapshotChanges();
   }
 
   updateProfile(profileKey, value) {
-    return this.db.collection('profiles').doc(profileKey).set(value);
+    this.userId = localStorage.getItem('user');
+    return this.db.collection('users').doc(this.userId).collection('profiles').doc(profileKey).set(value);
   }
 
   deleteProfile(profileKey) {
@@ -30,11 +33,13 @@ export class ProfileService {
   }
 
   getProfiles() {
-    return this.db.collection('profiles').snapshotChanges();
+    this.userId = localStorage.getItem('user');
+    return this.db.collection('users').doc(this.userId).collection('profiles').snapshotChanges();
   }
 
-  createProfile(value, avatar) {
-    return this.db.collection('profiles').add({
+  createProfile(value) {
+    this.userId = localStorage.getItem('user');
+    return this.db.collection('users').doc(this.userId).collection('profiles').add({
       artistName: value.artistName,
       artistGenre: value.artistGenre,
       yearFormed: value.yearFormed,
