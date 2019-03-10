@@ -23,9 +23,7 @@ export class EditProfileComponent implements OnInit {
     private route: ActivatedRoute,
     private afAuth: AuthService
 
-  ) {
-
-    }
+  ) { }
 
   // Initiate Reactive Form to create profiles.
   ngOnInit() {

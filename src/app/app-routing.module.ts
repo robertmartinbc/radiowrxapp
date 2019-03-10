@@ -23,6 +23,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { EditProfileResolver } from './edit-profile/edit-profile.resolver';
+import { CreateAlbumComponent } from './create-album/create-album.component';
+import { EditAlbumComponent } from './edit-album/edit-album.component';
+import { ViewAlbumComponent } from './view-album/view-album.component';
+import { EditAlbumResolver } from './edit-album/edit-album.resolver';
 
 import { AuthGuard } from './shared/services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './shared/services/guard/secure-inner-pages.guard';
@@ -51,7 +55,12 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'create-profile', component: CreateProfileComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'details/:id', component: EditProfileComponent, resolve:{data: EditProfileResolver}}
+  { path: 'profile-details/:id', component: EditProfileComponent, resolve:{data: EditProfileResolver}},
+  { path: 'create-album', component: CreateAlbumComponent, canActivate: [AuthGuard] },
+  { path: 'view-album', component: ViewAlbumComponent, canActivate: [AuthGuard] },
+  { path: 'edit-album', component: EditAlbumComponent, canActivate: [AuthGuard] },
+  { path: 'album-details/:id', component: EditAlbumComponent, resolve:{data: EditAlbumResolver}}
+
 
 ];
 

@@ -1,3 +1,64 @@
-<p>
-  my-bands-music works!
-</p>
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container" no-padding>
+  <div class="row login-box shadow">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5>Your Music</h5></div>
+          <div id="element2"><button class="btn btn-danger">Add Album</button></div>
+        </div>
+      </div>
+        <hr />
+      <!-- No data shows when their is no student data available -->
+      <div class="row" *ngIf="noData">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4 text-center">
+          <p class="nodata-msg">No Albums created yet!</p>
+          <button routerLink="/create-album" class="btn btn-danger btn-block">
+            Create Album
+          </button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+      <div *ngFor="let item of items">
+        <div class="row">
+          <div class="col-sm-2">
+            <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+          </div>
+          <div class="col-sm-7">
+            <p>Title: {{item.payload.doc.data().albumTitle}}</p>
+            <p>Genre: {{item.payload.doc.data().albumGenre}}</p>
+            <p>Year Released: {{item.payload.doc.data().yearReleased}}</p>
+            <p>Songs: {{item.payload.doc.data().numberOfTracks}}</p>
+            <p>Duration: {{item.payload.doc.data().albumDuration}}</p>
+            <p>Description: {{item.payload.doc.data().description}}</p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-sm-1">
+
+          </div>
+          <div class="col-sm-3 spacer">
+            <button type="submit" class="btn btn-danger btn-block" (click)="viewAlbum(item)">
+              Edit
+            </button>
+          </div>
+          <div class="col-sm-3 spacer">
+          </div>
+          <div class="col-sm-3">
+            <button class="btn btn-primary btn-block" (click)="delete()">
+              Delete
+            </button>
+          </div>
+          <div class="col-sm-1">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

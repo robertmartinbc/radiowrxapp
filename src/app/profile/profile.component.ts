@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
   }
 
   viewProfile(item) {
-    this.router.navigate(['/details/' + item.payload.doc.id]);
+    this.router.navigate(['/profile-details/' + item.payload.doc.id]);
   }
 
   logOut() {

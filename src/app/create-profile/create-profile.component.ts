@@ -43,19 +43,6 @@ export class CreateProfileComponent implements OnInit {
   )
 }
 
-  /*openDialog() {
-    const dialogRef = this.dialog.open(AvatarDialogComponent, {
-      height: '400px',
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if(result){
-        this.avatarLink = result.link;
-      }
-    });
-  }*/
-
   resetFields(){
     this.profileForm = this.fb.group({
       artistName: new FormControl('', Validators.required),
@@ -70,7 +57,7 @@ export class CreateProfileComponent implements OnInit {
     });
   }
 
-  onSubmit(value){
+  onSubmit(value) {
     this.profileService.createProfile(value)
     .then(
       res => {

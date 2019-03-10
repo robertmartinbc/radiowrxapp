@@ -9,37 +9,38 @@ export class ProfileService {
   userId: string;
 
   constructor(
-    private db: AngularFirestore
+    private afs: AngularFirestore
     //public afAuth: AngularFireAuth,
     //public router: Router
   ) { }
 
   getAvatars(){
-      return this.db.collection('/avatar').valueChanges()
+      return this.afs.collection('/avatar').valueChanges()
   }
 
   getProfile(profileKey) {
     this.userId = localStorage.getItem('user');
-    return this.db.collection('users').doc(this.userId).collection('profiles').doc(profileKey).snapshotChanges();
+    return this.afs.collection('users').doc(this.userId).collection('profiles').doc(profileKey).snapshotChanges();
   }
 
   updateProfile(profileKey, value) {
     this.userId = localStorage.getItem('user');
-    return this.db.collection('users').doc(this.userId).collection('profiles').doc(profileKey).set(value);
+    return this.afs.collection('users').doc(this.userId).collection('profiles').doc(profileKey).set(value);
   }
 
   deleteProfile(profileKey) {
-    return this.db.collection('profiles').doc(profileKey).delete();
+    this.userId = localStorage.getItem('user');
+    return this.afs.collection('users').doc(this.userId).collection('profiles').doc(profileKey).delete();
   }
 
   getProfiles() {
     this.userId = localStorage.getItem('user');
-    return this.db.collection('users').doc(this.userId).collection('profiles').snapshotChanges();
+    return this.afs.collection('users').doc(this.userId).collection('profiles').snapshotChanges();
   }
 
   createProfile(value) {
     this.userId = localStorage.getItem('user');
-    return this.db.collection('users').doc(this.userId).collection('profiles').add({
+    return this.afs.collection('users').doc(this.userId).collection('profiles').add({
       artistName: value.artistName,
       artistGenre: value.artistGenre,
       yearFormed: value.yearFormed,

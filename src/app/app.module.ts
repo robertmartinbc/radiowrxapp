@@ -10,6 +10,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +36,10 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileResolver } from './edit-profile/edit-profile.resolver'
+import { CreateAlbumComponent } from './create-album/create-album.component';
+import { EditAlbumComponent } from './edit-album/edit-album.component';
+import { ViewAlbumComponent } from './view-album/view-album.component';
+import { EditAlbumResolver } from './edit-album/edit-album.resolver';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -72,7 +77,10 @@ import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
     EditProfileComponent,
     CreateProfileComponent,
     ProfileComponent,
-    AvatarDialogComponent
+    AvatarDialogComponent,
+    CreateAlbumComponent,
+    EditAlbumComponent,
+    ViewAlbumComponent
   ],
   imports: [
     BrowserModule,
@@ -87,9 +95,10 @@ import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule // imports firebase/auth, only needed for auth features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    BrowserAnimationsModule
   ],
-  providers: [AuthService, ProfileService, EditProfileResolver],
+  providers: [AuthService, ProfileService, EditProfileResolver, EditAlbumResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
