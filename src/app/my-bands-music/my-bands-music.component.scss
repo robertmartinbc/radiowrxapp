@@ -5,4 +5,51 @@
 #element2 {
   display:inline-block;
   float: right;
-  }
+}
+
+#container {
+  width:100%;
+}
+
+#left {
+  float:left;
+  //margin-left: 10px;
+  text-align: center;
+}
+
+#center {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+#right {
+  float:right;
+  margin-top: 10px;
+}
+
+.header-headphones {
+  opacity: 0.5;
+  color: red;
+  margin-right: 20px;
+}
+
+.header-text {
+  opacity: 0.5;
+}
+
+.chevron-style {
+  cursor: pointer;
+  color: red;
+}
+
+.headphones {
+  font-size: 200px !important;
+  opacity: 0.5;
+  color: red;
+}
+
+.add-album {
+  color: red;
+  cursor: pointer;
+  opacity: 0.5;
+}

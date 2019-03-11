@@ -2,7 +2,12 @@
 <div class="container">
   <div class="row login-box shadow" no-padding>
     <div class="col-sm-12">
-      <h5 class="statement-text edit-header">Edit Your Profile</h5>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5 class="edit-label-style"><fa name="user" class="header-calendar"></fa>Edit Profile</h5></div>
+          <div id="element2"><fa name="times fa-lg" class="action-event" routerLink="/profile"></fa></div>
+        </div>
+      </div>
       <hr class="edit-hr-style" />
       <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)">
         <div class="form-row">

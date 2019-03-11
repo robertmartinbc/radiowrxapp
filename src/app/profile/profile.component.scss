@@ -1,0 +1,77 @@
+#element1 {
+  display:inline-block;
+  float: left;
+  }
+#element2 {
+  display:inline-block;
+  float: right;
+}
+
+#icon1 {
+  display: inline-block;
+  width: 16%;
+  text-align: center;
+  margin: 1px;
+}
+#icon2 {
+  display: inline-block;
+  width: 16%;
+  text-align: center;
+  margin: 1px;
+}
+#icon3 {
+  display: inline-block;
+  width: 16%;
+  text-align: center;
+  margin: 1px;
+}
+#icon4 {
+  display: inline-block;
+  width: 16%;
+  text-align: center;
+  margin: 1px;
+}
+#icon5 {
+  display: inline-block;
+  width: 16%;
+  text-align: center;
+  margin: 1px;
+}
+#icon6 {
+  display: inline-block;
+  width: 16%;
+  text-align: center;
+  margin: 1px;
+}
+
+.nav-icons {
+  cursor: pointer;
+  text-align: center;
+}
+
+.header-profile {
+  opacity: 0.5;
+  color: red;
+  margin-right: 20px;
+}
+
+/* Style buttons */
+.btn {
+  background-color: white; /* Blue background */
+  border: 1; /* Remove borders */
+  color: red; /* White text */
+  font-size: 20px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.header-edit {
+  opacity: 0.5;
+  color: red;
+  cursor: pointer;
+}

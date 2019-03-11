@@ -2,7 +2,12 @@
 <div class="container">
   <div class="row login-box shadow" no-padding>
     <div class="col-sm-12">
-      <h5 class="statement-text create-header">Create Your Album</h5>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5 class="create-label-style"><fa name="headphones" class="header-calendar"></fa>Create Your Album</h5></div>
+          <div id="element2"><fa name="times fa-lg" class="action-event" routerLink="/my-bands-music"></fa></div>
+        </div>
+      </div>
       <hr class="create-hr-style" />
       <form [formGroup]="albumForm" (ngSubmit)="onSubmit(albumForm.value)">
         <div class="form-row">

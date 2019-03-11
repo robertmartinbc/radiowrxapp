@@ -50,6 +50,12 @@ import { ProfileService } from './shared/services/profile.service';
 
 import { AuthService } from './shared/services/auth.service';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { ViewEventComponent } from './view-event/view-event.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
+import { CreateMemberComponent } from './create-member/create-member.component';
+import { EditMemberComponent } from './edit-member/edit-member.component';
+import { ViewMemberComponent } from './view-member/view-member.component';
 
 
 @NgModule({
@@ -80,7 +86,13 @@ import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
     AvatarDialogComponent,
     CreateAlbumComponent,
     EditAlbumComponent,
-    ViewAlbumComponent
+    ViewAlbumComponent,
+    CreateEventComponent,
+    ViewEventComponent,
+    EditEventComponent,
+    CreateMemberComponent,
+    EditMemberComponent,
+    ViewMemberComponent
   ],
   imports: [
     BrowserModule,

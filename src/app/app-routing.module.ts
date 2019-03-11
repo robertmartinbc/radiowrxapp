@@ -27,6 +27,11 @@ import { CreateAlbumComponent } from './create-album/create-album.component';
 import { EditAlbumComponent } from './edit-album/edit-album.component';
 import { ViewAlbumComponent } from './view-album/view-album.component';
 import { EditAlbumResolver } from './edit-album/edit-album.resolver';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
+import { ViewEventComponent } from './view-event/view-event.component';
+import { EditEventResolver } from './edit-event/edit-event.resolver';
+
 
 import { AuthGuard } from './shared/services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './shared/services/guard/secure-inner-pages.guard';
@@ -59,7 +64,12 @@ const routes: Routes = [
   { path: 'create-album', component: CreateAlbumComponent, canActivate: [AuthGuard] },
   { path: 'view-album', component: ViewAlbumComponent, canActivate: [AuthGuard] },
   { path: 'edit-album', component: EditAlbumComponent, canActivate: [AuthGuard] },
-  { path: 'album-details/:id', component: EditAlbumComponent, resolve:{data: EditAlbumResolver}}
+  { path: 'album-details/:id', component: EditAlbumComponent, resolve:{data: EditAlbumResolver}},
+  { path: 'create-event', component: CreateEventComponent, canActivate: [AuthGuard] },
+  { path: 'view-event', component: ViewEventComponent, canActivate: [AuthGuard] },
+  { path: 'edit-event', component: EditEventComponent, canActivate: [AuthGuard] },
+  { path: 'event-details/:id', component: EditEventComponent, resolve:{data: EditEventResolver}}
+
 
 
 ];

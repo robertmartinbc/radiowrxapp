@@ -2,6 +2,7 @@
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap
 
+
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
 
@@ -137,4 +138,29 @@
 
 .edit-header {
   color: red;
+}
+
+.album-text {
+  font-size: 14px;
+  margin: 0px;
+}
+
+.header-calendar {
+  opacity: 0.5;
+  color: red;
+  margin-right: 20px;
+}
+.action-event {
+  color: red;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+#element1 {
+  display:inline-block;
+  float: left;
+  }
+#element2 {
+  display:inline-block;
+  float: right;
 }

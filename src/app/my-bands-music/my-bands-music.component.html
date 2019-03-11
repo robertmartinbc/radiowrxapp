@@ -4,8 +4,8 @@
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12">
-          <div id="element1"><h5>Your Music</h5></div>
-          <div id="element2"><button class="btn btn-danger">Add Album</button></div>
+          <div id="element1"><h5><fa name="headphones" class="header-headphones"></fa>Your Music</h5></div>
+          <div id="element2"><fa name="plus fa-lg" class="add-album" routerLink="/create-album"></fa></div>
         </div>
       </div>
         <hr />
@@ -15,47 +15,30 @@
 
         </div>
         <div class="col-sm-4 text-center">
-          <p class="nodata-msg">No Albums created yet!</p>
-          <button routerLink="/create-album" class="btn btn-danger btn-block">
-            Create Album
+          <p class="nodata-msg">You have not added any albums.</p>
+          <fa name="headphones" class="headphones"></fa>
+          <button routerLink="/create-album" class="btn btn-outline-danger btn-block btn-sm">
+            Add Album
           </button>
         </div>
         <div class="col-sm-4">
         </div>
       </div>
-      <div *ngFor="let item of items">
-        <div class="row">
-          <div class="col-sm-2">
-            <img class="align-self-start mr-5 img-thumbnail rounded-circle">
-          </div>
-          <div class="col-sm-7">
-            <p>Title: {{item.payload.doc.data().albumTitle}}</p>
-            <p>Genre: {{item.payload.doc.data().albumGenre}}</p>
-            <p>Year Released: {{item.payload.doc.data().yearReleased}}</p>
-            <p>Songs: {{item.payload.doc.data().numberOfTracks}}</p>
-            <p>Duration: {{item.payload.doc.data().albumDuration}}</p>
-            <p>Description: {{item.payload.doc.data().description}}</p>
-          </div>
-        </div>
-        <hr />
-        <div class="row">
-          <div class="col-sm-1">
-
-          </div>
-          <div class="col-sm-3 spacer">
-            <button type="submit" class="btn btn-danger btn-block" (click)="viewAlbum(item)">
-              Edit
-            </button>
-          </div>
-          <div class="col-sm-3 spacer">
-          </div>
-          <div class="col-sm-3">
-            <button class="btn btn-primary btn-block" (click)="delete()">
-              Delete
-            </button>
-          </div>
-          <div class="col-sm-1">
-
+      <div class="login-box shadow" *ngFor="let item of items">
+        <div class="row" (click)="viewAlbum()">
+          <div class="col-sm-12">
+            <div id="container">
+              <div id="left">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+              </div>
+              <div id="center">
+                <p class="album-text">{{item.payload.doc.data().albumTitle}}</p>
+                <p class="album-text">{{item.payload.doc.data().yearReleased}}</p>
+              </div>
+              <div id="right">
+                <fa name="chevron-right" class="chevron-style"></fa>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,72 @@
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container">
+  <div class="row login-box shadow" no-padding>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5><fa name="calendar" class="header-calendar"></fa>Create Event</h5></div>
+          <div id="element2"><fa name="times fa-lg" class="action-event" routerLink="/my-bands-events"></fa></div>
+        </div>
+      </div>
+      <hr class="create-hr-style" />
+      <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)">
+        <div class="form-row">
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Title</label>
+            <input type="text" formControlName="eventTitle" class="form-control form-control-sm" placeholder="Event Title" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Venue</label>
+            <input type="text" formControlName="eventVenue" class="form-control form-control-sm" placeholder="Event Venue" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Post/Zip Code</label>
+            <input type="text" formControlName="eventPostcode" class="form-control form-control-sm" placeholder="Post/Zip Code" required />
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-3 form-group">
+            <label class="create-label-style">Date</label>
+            <input type="text" formControlName="eventDate" class="form-control form-control-sm" placeholder="Event Date" required />
+          </div>
+          <div class="col-sm-3 form-group">
+            <label class="create-label-style">Start Time</label>
+            <input type="text" formControlName="eventStartTime" class="form-control form-control-sm" placeholder="Event Start Time" required />
+          </div>
+          <div class="col-sm-3 form-group">
+            <label class="create-label-style">Available Tickets</label>
+            <input formControlName="availableTickets" class="form-control form-control-sm" placeholder="Available Tickets" required />
+          </div>
+          <div class="col-sm-3 form-group">
+            <label class="create-label-style">Price</label>
+            <input formControlName="eventPrice" class="form-control form-control-sm" placeholder="Price" required />
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-12 form-group">
+            <label class="create-label-style">Description</label>
+            <textarea formControlName="eventDescription" class="form-control form-control-sm" placeholder="Description" required></textarea>
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-3">
+
+          </div>
+          <div class="col-sm-3 form-group">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="eventForm.invalid">Create</button>
+          </div>
+          <div class=" form-group col-sm-3">
+            <button type="submit" class="btn btn-danger btn-block" routerLink="/my-bands-events">Cancel</button>
+          </div>
+          <div class="col-sm-3">
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

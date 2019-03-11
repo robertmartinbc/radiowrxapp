@@ -2,7 +2,35 @@
 <div class="container" no-padding>
   <div class="row login-box shadow">
     <div class="col-sm-12">
-      <h5 class="statement-text">Profile</h5>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5><fa name="user" class="header-profile"></fa>Profile</h5></div>
+          <!--<div id="element2"><fa name="pencil fa-lg" class="header-edit" routerLink="/edit-profile"></fa></div>-->
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="icon1">
+            <button class="btn btn-outline-danger btn-block" routerLink="/my-bands-music"><fa name="headphones" class="nav-icons"></fa></button>
+          </div>
+          <div id="icon2">
+            <button class="btn btn-outline-danger btn-block" routerLink="/my-bands-members"><fa name="users" class="nav-icons"></fa></button>
+          </div>
+          <div id="icon3">
+            <button class="btn btn-outline-danger btn-block" routerLink="/my-bands-events"><fa name="calendar" class="nav-icons"></fa></button>
+          </div>
+          <div id="icon4">
+            <button class="btn btn-outline-danger btn-block" routerLink="/my-bands-videos"><fa name="play" class="nav-icons"></fa></button>
+          </div>
+          <div id="icon5">
+            <button class="btn btn-outline-danger btn-block" routerLink="/my-bands-cd-funds"><fa name="dollar" class="nav-icons"></fa></button>
+          </div>
+          <div id="icon6">
+            <button class="btn btn-outline-danger btn-block" routerLink="/my-bands-private-parties"><fa name="glass" class="nav-icons"></fa></button>
+          </div>
+        </div>
+      </div>
       <hr />
       <!-- No data shows when their is no student data available -->
       <div class="row" *ngIf="noData">
@@ -10,7 +38,7 @@
 
         </div>
         <div class="col-sm-4 text-center">
-          <p class="nodata-msg">No profile created yet!</p>
+          <p class="nodata-msg">You have not created a profile.</p>
           <button routerLink="/create-profile" class="btn btn-primary btn-block">
             Create Profile
           </button>
@@ -35,12 +63,6 @@
             <p>Contact: {{item.payload.doc.data().contactNumber}}</p>
           </div>
           <div class="col-sm-3">
-            <button class="btn btn-primary btn-block" routerLink="/my-bands-music">Music</button>
-            <button class="btn btn-primary btn-block" routerLink="/my-bands-members">Band Members</button>
-            <button class="btn btn-primary btn-block" routerLink="/my-bands-events">Events</button>
-            <button class="btn btn-primary btn-block" routerLink="/my-bands-videos">Videos</button>
-            <button class="btn btn-primary btn-block" routerLink="/my-bands-cd-funds">CD Funds</button>
-            <button class="btn btn-primary btn-block" routerLink="/my-bands-private-parties">Private Parties</button>
           </div>
         </div>
         <hr />
