@@ -35,7 +35,7 @@ export class MembersService {
     this.userId = localStorage.getItem('user');
     return this.afs.collection('users').doc(this.userId).collection('members').add({
       memberName: value.memberName,
-      memberBiography: value.memberBiography,
+      memberBio: value.memberBio,
       memberInstrument: value.memberInstrument,
       memberDOB: value.memberDOB
     })

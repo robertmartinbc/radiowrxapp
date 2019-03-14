@@ -10,7 +10,6 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { EventsComponent } from './events/events.component';
 import { BandsComponent } from './bands/bands.component';
 import { VideosComponent } from './videos/videos.component';
-import { CdFundsComponent } from './cd-funds/cd-funds.component';
 import { BandsByFansComponent } from './bands-by-fans/bands-by-fans.component';
 import { ContactComponent } from './contact/contact.component';
 import { MyBandsEventsComponent } from './my-bands-events/my-bands-events.component';
@@ -31,6 +30,18 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { ViewEventComponent } from './view-event/view-event.component';
 import { EditEventResolver } from './edit-event/edit-event.resolver';
+import { CreateMemberComponent } from './create-member/create-member.component';
+import { EditMemberComponent } from './edit-member/edit-member.component';
+import { ViewMemberComponent } from './view-member/view-member.component';
+import { EditMemberResolver } from './edit-member/edit-member.resolver';
+import { CreateVideoComponent } from './create-video/create-video.component';
+import { EditVideoComponent } from './edit-video/edit-video.component';
+import { ViewVideoComponent } from './view-video/view-video.component';
+import { EditVideoResolver } from './edit-video/edit-video.resolver';
+import { CreateCdFundsComponent } from './create-cd-funds/create-cd-funds.component';
+import { EditCdFundsComponent } from './edit-cd-funds/edit-cd-funds.component';
+import { ViewCdFundsComponent } from './view-cd-funds/view-cd-funds.component';
+import { EditCdFundsResolver } from './edit-cd-funds/edit-cd-funds.resolver';
 
 
 import { AuthGuard } from './shared/services/guard/auth.guard';
@@ -46,7 +57,6 @@ const routes: Routes = [
   { path: 'bands', component: BandsComponent },
   { path: 'events', component: EventsComponent },
   { path: 'videos', component: VideosComponent },
-  { path: 'cd-funds', component: CdFundsComponent },
   { path: 'bands-by-fans', component: BandsByFansComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
@@ -68,10 +78,19 @@ const routes: Routes = [
   { path: 'create-event', component: CreateEventComponent, canActivate: [AuthGuard] },
   { path: 'view-event', component: ViewEventComponent, canActivate: [AuthGuard] },
   { path: 'edit-event', component: EditEventComponent, canActivate: [AuthGuard] },
-  { path: 'event-details/:id', component: EditEventComponent, resolve:{data: EditEventResolver}}
-
-
-
+  { path: 'event-details/:id', component: EditEventComponent, resolve:{data: EditEventResolver}},
+  { path: 'create-member', component: CreateMemberComponent, canActivate: [AuthGuard] },
+  { path: 'view-member', component: ViewMemberComponent, canActivate: [AuthGuard] },
+  { path: 'edit-member', component: EditMemberComponent, canActivate: [AuthGuard] },
+  { path: 'member-details/:id', component: EditMemberComponent, resolve:{data: EditMemberResolver}},
+  { path: 'create-video', component: CreateVideoComponent, canActivate: [AuthGuard] },
+  { path: 'view-video', component: ViewVideoComponent, canActivate: [AuthGuard] },
+  { path: 'edit-video', component: EditVideoComponent, canActivate: [AuthGuard] },
+  { path: 'video-details/:id', component: EditVideoComponent, resolve:{data: EditVideoResolver}},
+  { path: 'create-cd-funds', component: CreateCdFundsComponent, canActivate: [AuthGuard] },
+  { path: 'view-cd-funds', component: ViewCdFundsComponent, canActivate: [AuthGuard] },
+  { path: 'edit-cd-funds', component: EditCdFundsComponent, canActivate: [AuthGuard] },
+  { path: 'cd-funds-details/:id', component: EditCdFundsComponent, resolve:{data: EditCdFundsResolver}}
 ];
 
 @NgModule({

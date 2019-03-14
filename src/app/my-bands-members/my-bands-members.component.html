@@ -1,10 +1,10 @@
 <h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
-<div class="container" no-padding>
+<div class="container-fluid" no-padding>
   <div class="row login-box shadow">
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12">
-          <div id="element1"><h5><fa name="users" class="header-calendar"></fa>Members</h5></div>
+          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/profile"></fa><fa name="users" class="header-member"></fa>Members</h5></div>
           <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-member"></fa></div>
         </div>
       </div>
@@ -15,28 +15,28 @@
 
         </div>
         <div class="col-sm-4 text-center">
-          <p class="nodata-msg">You have not added any Events.</p>
-          <fa name="calendar" class="calendar"></fa>
-          <button routerLink="/create-event" class="btn btn-outline-danger btn-block btn-sm">
-            Add Event
+          <p class="nodata-msg">You have not added any Members.</p>
+          <fa name="users" class="member"></fa>
+          <button routerLink="/create-member" class="btn btn-outline-danger btn-block btn-sm">
+            Add Member
           </button>
         </div>
         <div class="col-sm-4">
         </div>
       </div>
       <div class="login-box shadow" *ngFor="let item of items">
-        <div class="row" (click)="viewEvent()">
+        <div class="row" (click)="viewMember()">
           <div class="col-sm-12">
             <div id="container">
               <div id="left">
                 <img class="align-self-start mr-5 img-thumbnail rounded-circle">
               </div>
               <div id="center">
-                <p class="album-text">{{item.payload.doc.data().eventTitle}}</p>
+                <p class="album-text">{{item.payload.doc.data().memberName}}</p>
                 <p class="album-text"></p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-style"></fa>
+                <fa name="chevron-right" class="chevron-right-style"></fa>
               </div>
             </div>
           </div>

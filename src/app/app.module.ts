@@ -20,7 +20,6 @@ import { BandsComponent } from './bands/bands.component';
 import { RegisterComponent } from './register/register.component';
 import { EventsComponent } from './events/events.component';
 import { VideosComponent } from './videos/videos.component';
-import { CdFundsComponent } from './cd-funds/cd-funds.component'
 import { BandsByFansComponent } from './bands-by-fans/bands-by-fans.component';
 import { ContactComponent } from './contact/contact.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -56,6 +55,15 @@ import { EditEventComponent } from './edit-event/edit-event.component';
 import { CreateMemberComponent } from './create-member/create-member.component';
 import { EditMemberComponent } from './edit-member/edit-member.component';
 import { ViewMemberComponent } from './view-member/view-member.component';
+import { EditMemberResolver } from './edit-member/edit-member.resolver';
+import { CreateVideoComponent } from './create-video/create-video.component';
+import { EditVideoComponent } from './edit-video/edit-video.component';
+import { ViewVideoComponent } from './view-video/view-video.component';
+import { EditVideoResolver } from './edit-video/edit-video.resolver';
+import { CreateCdFundsComponent } from './create-cd-funds/create-cd-funds.component';
+import { EditCdFundsComponent } from './edit-cd-funds/edit-cd-funds.component';
+import { ViewCdFundsComponent } from './view-cd-funds/view-cd-funds.component';
+import { EditCdFundsResolver } from './edit-cd-funds/edit-cd-funds.resolver';
 
 
 @NgModule({
@@ -65,7 +73,6 @@ import { ViewMemberComponent } from './view-member/view-member.component';
     BandsComponent,
     EventsComponent,
     VideosComponent,
-    CdFundsComponent,
     BandsByFansComponent,
     LoginComponent,
     UserComponent,
@@ -92,7 +99,13 @@ import { ViewMemberComponent } from './view-member/view-member.component';
     EditEventComponent,
     CreateMemberComponent,
     EditMemberComponent,
-    ViewMemberComponent
+    ViewMemberComponent,
+    CreateVideoComponent,
+    EditVideoComponent,
+    ViewVideoComponent,
+    CreateCdFundsComponent,
+    EditCdFundsComponent,
+    ViewCdFundsComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +123,9 @@ import { ViewMemberComponent } from './view-member/view-member.component';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     BrowserAnimationsModule
   ],
-  providers: [AuthService, ProfileService, EditProfileResolver, EditAlbumResolver],
+  providers: [AuthService, ProfileService, EditProfileResolver,
+              EditAlbumResolver, EditMemberResolver, EditVideoResolver,
+              EditCdFundsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

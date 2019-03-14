@@ -1,12 +1,3 @@
-#element1 {
-  display:inline-block;
-  float: left;
-  }
-#element2 {
-  display:inline-block;
-  float: right;
-}
-
 #container {
   width:100%;
 }
@@ -37,9 +28,4 @@
   opacity: 0.5;
   color: red;
   margin-right: 20px;
-}
-
-.chevron-style {
-  cursor: pointer;
-  color: red;
 }

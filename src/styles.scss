@@ -150,6 +150,19 @@
   color: red;
   margin-right: 20px;
 }
+
+.header-play {
+  opacity: 0.5;
+  color: red;
+  margin-right: 20px;
+}
+
+.header-dollar {
+  opacity: 0.5;
+  color: red;
+  margin-right: 20px;
+}
+
 .action-event {
   color: red;
   cursor: pointer;
@@ -163,4 +176,15 @@
 #element2 {
   display:inline-block;
   float: right;
+}
+
+.chevron-left-style {
+  cursor: pointer;
+  color: red;
+  margin-right: 20px;
+}
+
+.chevron-right-style {
+  cursor: pointer;
+  color: red;
 }

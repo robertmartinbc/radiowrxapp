@@ -3,7 +3,6 @@ import { EventsService } from '../shared/services/events.service';
 import { Router, Params } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
-
 @Component({
   selector: 'app-my-bands-events',
   templateUrl: './my-bands-events.component.html',
