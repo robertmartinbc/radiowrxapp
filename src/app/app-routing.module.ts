@@ -18,6 +18,7 @@ import { MyBandsVideosComponent } from './my-bands-videos/my-bands-videos.compon
 import { MyBandsCdFundsComponent } from './my-bands-cd-funds/my-bands-cd-funds.component';
 import { MyBandsPrivatePartiesComponent } from './my-bands-private-parties/my-bands-private-parties.component';
 import { MyBandsMembersComponent } from './my-bands-members/my-bands-members.component';
+import { MyBandsByFansComponent } from './my-bands-by-fans/my-bands-by-fans.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
@@ -42,6 +43,10 @@ import { CreateCdFundsComponent } from './create-cd-funds/create-cd-funds.compon
 import { EditCdFundsComponent } from './edit-cd-funds/edit-cd-funds.component';
 import { ViewCdFundsComponent } from './view-cd-funds/view-cd-funds.component';
 import { EditCdFundsResolver } from './edit-cd-funds/edit-cd-funds.resolver';
+import { CreateBandsByFansComponent } from './create-bands-by-fans/create-bands-by-fans.component';
+import { EditBandsByFansComponent } from './edit-bands-by-fans/edit-bands-by-fans.component';
+import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fans.component';
+import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans.resolver';
 
 
 import { AuthGuard } from './shared/services/guard/auth.guard';
@@ -66,6 +71,7 @@ const routes: Routes = [
   { path: 'my-bands-videos' , component: MyBandsVideosComponent, canActivate: [AuthGuard] },
   { path: 'my-bands-cd-funds' , component: MyBandsCdFundsComponent, canActivate: [AuthGuard] },
   { path: 'my-bands-private-parties' , component: MyBandsPrivatePartiesComponent, canActivate: [AuthGuard] },
+  { path: 'my-bands-by-fans' , component: MyBandsByFansComponent, canActivate: [AuthGuard] },
   { path: 'my-bands-members' , component: MyBandsMembersComponent, canActivate: [AuthGuard] },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'create-profile', component: CreateProfileComponent },
@@ -90,7 +96,11 @@ const routes: Routes = [
   { path: 'create-cd-funds', component: CreateCdFundsComponent, canActivate: [AuthGuard] },
   { path: 'view-cd-funds', component: ViewCdFundsComponent, canActivate: [AuthGuard] },
   { path: 'edit-cd-funds', component: EditCdFundsComponent, canActivate: [AuthGuard] },
-  { path: 'cd-funds-details/:id', component: EditCdFundsComponent, resolve:{data: EditCdFundsResolver}}
+  { path: 'cd-funds-details/:id', component: EditCdFundsComponent, resolve:{data: EditCdFundsResolver}},
+  { path: 'create-bands-by-fans', component: CreateBandsByFansComponent, canActivate: [AuthGuard] },
+  { path: 'view-bands-by-fans', component: ViewBandsByFansComponent, canActivate: [AuthGuard] },
+  { path: 'edit-bands-by-fans', component: EditBandsByFansComponent, canActivate: [AuthGuard] },
+  { path: 'bands-by-fans-details/:id', component: EditBandsByFansComponent, resolve:{data: EditBandsByFansResolver}}
 ];
 
 @NgModule({

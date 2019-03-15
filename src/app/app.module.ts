@@ -67,7 +67,8 @@ import { EditCdFundsResolver } from './edit-cd-funds/edit-cd-funds.resolver';
 import { CreateBandsByFansComponent } from './create-bands-by-fans/create-bands-by-fans.component';
 import { EditBandsByFansComponent } from './edit-bands-by-fans/edit-bands-by-fans.component';
 import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fans.component';
-
+import { MyBandsByFansComponent } from './my-bands-by-fans/my-bands-by-fans.component';
+import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans.resolver';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fan
     ViewCdFundsComponent,
     CreateBandsByFansComponent,
     EditBandsByFansComponent,
-    ViewBandsByFansComponent
+    ViewBandsByFansComponent,
+    MyBandsByFansComponent
   ],
   imports: [
     BrowserModule,
@@ -131,7 +133,7 @@ import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fan
   ],
   providers: [AuthService, ProfileService, EditProfileResolver,
               EditAlbumResolver, EditMemberResolver, EditVideoResolver,
-              EditCdFundsResolver],
+              EditCdFundsResolver, EditBandsByFansResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

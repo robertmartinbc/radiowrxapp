@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditBandsByFansComponent } from './edit-bands-by-fans.component';
+import { MyBandsByFansComponent } from './my-bands-by-fans.component';
 
-describe('EditBandsByFansComponent', () => {
-  let component: EditBandsByFansComponent;
-  let fixture: ComponentFixture<EditBandsByFansComponent>;
+describe('MyBandsByFansComponent', () => {
+  let component: MyBandsByFansComponent;
+  let fixture: ComponentFixture<MyBandsByFansComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditBandsByFansComponent ]
+      declarations: [ MyBandsByFansComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditBandsByFansComponent);
+    fixture = TestBed.createComponent(MyBandsByFansComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
