@@ -48,7 +48,7 @@ import { AuthGuard } from './shared/services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './shared/services/guard/secure-inner-pages.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main-page', pathMatch: 'full' },
+  { path: '', redirectTo: 'profile', pathMatch: 'full' },
   { path: 'main-page', component: MainPageComponent },
   { path: 'login', component: LoginComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
@@ -69,7 +69,7 @@ const routes: Routes = [
   { path: 'my-bands-members' , component: MyBandsMembersComponent, canActivate: [AuthGuard] },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'create-profile', component: CreateProfileComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'profile-details/:id', component: EditProfileComponent, resolve:{data: EditProfileResolver}},
   { path: 'create-album', component: CreateAlbumComponent, canActivate: [AuthGuard] },
   { path: 'view-album', component: ViewAlbumComponent, canActivate: [AuthGuard] },

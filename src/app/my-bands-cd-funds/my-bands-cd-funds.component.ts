@@ -15,12 +15,38 @@ export class MyBandsCdFundsComponent implements OnInit {
   preLoader: boolean = true;
 
   constructor(
-    private cdFundsService: CdfundsService,
+    private cdfundsService: CdfundsService,
     public router: Router,
     private afAuth: AuthService
   ) { }
 
   ngOnInit() {
+    this.getData();
+    this.dataState();
+  }
+
+  getData() {
+    this.cdfundsService.getCdFunds()
+    .subscribe(result => {
+      this.items = result;
+    })
+  }
+
+  viewCdFund() {
+    this.router.navigate(['view-cd-funds']);
+  }
+
+  dataState() {
+    this.cdfundsService.getCdFunds().subscribe(data => {
+      this.preLoader = false;
+      if(data.length <= 0){
+        this.hideWhenNoStudent = false;
+        this.noData = true;
+      } else {
+        this.hideWhenNoStudent = true;
+        this.noData = false;
+      }
+    })
   }
 
 }

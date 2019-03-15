@@ -64,6 +64,9 @@ import { CreateCdFundsComponent } from './create-cd-funds/create-cd-funds.compon
 import { EditCdFundsComponent } from './edit-cd-funds/edit-cd-funds.component';
 import { ViewCdFundsComponent } from './view-cd-funds/view-cd-funds.component';
 import { EditCdFundsResolver } from './edit-cd-funds/edit-cd-funds.resolver';
+import { CreateBandsByFansComponent } from './create-bands-by-fans/create-bands-by-fans.component';
+import { EditBandsByFansComponent } from './edit-bands-by-fans/edit-bands-by-fans.component';
+import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fans.component';
 
 
 @NgModule({
@@ -105,7 +108,10 @@ import { EditCdFundsResolver } from './edit-cd-funds/edit-cd-funds.resolver';
     ViewVideoComponent,
     CreateCdFundsComponent,
     EditCdFundsComponent,
-    ViewCdFundsComponent
+    ViewCdFundsComponent,
+    CreateBandsByFansComponent,
+    EditBandsByFansComponent,
+    ViewBandsByFansComponent
   ],
   imports: [
     BrowserModule,
