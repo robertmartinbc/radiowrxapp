@@ -145,25 +145,7 @@
   margin: 0px;
 }
 
-.header-calendar {
-  opacity: 0.5;
-  color: red;
-  margin-right: 20px;
-}
-
-.header-play {
-  opacity: 0.5;
-  color: red;
-  margin-right: 20px;
-}
-
-.header-dollar {
-  opacity: 0.5;
-  color: red;
-  margin-right: 20px;
-}
-
-.header-heartbeat {
+.header-icon {
   opacity: 0.5;
   color: red;
   margin-right: 20px;
@@ -184,6 +166,26 @@
   float: right;
 }
 
+#container {
+  width:100%;
+}
+
+#left {
+  float:left;
+  //margin-left: 10px;
+  text-align: center;
+}
+
+#center {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+#right {
+  float:right;
+  margin-top: 10px;
+}
+
 .chevron-left-style {
   cursor: pointer;
   color: red;
@@ -192,5 +194,23 @@
 
 .chevron-right-style {
   cursor: pointer;
+  color: red;
+}
+
+.dollar {
+  font-size: 200px !important;
+  opacity: 0.5;
+  color: red;
+}
+
+.calendar {
+  font-size: 200px !important;
+  opacity: 0.5;
+  color: red;
+}
+
+.play {
+  font-size: 200px !important;
+  opacity: 0.5;
   color: red;
 }
