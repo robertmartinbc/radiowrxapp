@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/profile"></fa><fa name="heartbeat" class="header-heartbeat"></fa>Bands By Fans</h5></div>
-          <div id="element2"><fa name="plus fa-lg" class="add-bandsbyfans" routerLink="/create-bands-by-fans"></fa></div>
+          <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-bands-by-fans"></fa></div>
         </div>
       </div>
       <hr />
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="login-box shadow" *ngFor="let item of items">
-        <div class="row" (click)="viewBandsByFans()">
+        <div class="row">
           <div class="col-sm-12">
             <div id="container">
               <div id="left">
@@ -33,9 +33,13 @@
               <div id="center">
                 <p class="album-text">{{item.payload.doc.data().chosenCountry}}</p>
                 <p class="album-text">{{item.payload.doc.data().ticketPrice}}</p>
+                <p class="album-text">{{item.payload.doc.data().ticketsRequired}}</p>
+                <p class="album-text">{{item.payload.doc.data().chosenTown}}</p>
+                <p class="album-text">{{item.payload.doc.data().bandsbyfansDescription}}</p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-right-style"></fa>
+                <fa name="pencil" class="edit-pencil" (click)="editBandsByFans(item)"></fa>
+                <fa name="trash" class="edit-trash"></fa>
               </div>
             </div>
           </div>

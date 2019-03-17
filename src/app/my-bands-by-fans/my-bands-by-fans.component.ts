@@ -49,4 +49,8 @@ export class MyBandsByFansComponent implements OnInit {
     })
   }
 
+  editBandsByFans(item) {
+    this.router.navigate(['/edit-bands-by-fans-details/' + item.payload.doc.id]);
+  }
+
 }

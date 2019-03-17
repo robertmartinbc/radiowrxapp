@@ -5,7 +5,6 @@ import { CdfundsService } from '../shared/services/cdfunds.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
-
 @Component({
   selector: 'app-edit-cd-funds',
   templateUrl: './edit-cd-funds.component.html',
