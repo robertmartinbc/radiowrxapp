@@ -1,4 +1,3 @@
-<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
 <div class="container-fluid" no-padding>
   <div class="row login-box shadow" no-padding>
     <div class="col-sm-12">
@@ -25,7 +24,7 @@
         </div>
       </div>
       <div class="login-box shadow" *ngFor="let item of items">
-        <div class="row" (click)="viewCdFund()">
+        <div class="row">
           <div class="col-sm-12">
             <div id="container">
               <div id="left">
@@ -34,9 +33,13 @@
               <div id="center">
                 <p class="album-text">{{item.payload.doc.data().cdfundsTitle}}</p>
                 <p class="album-text">{{item.payload.doc.data().expectationDate}}</p>
+                <p class="album-text">{{item.payload.doc.data().cdfundsPackage}}</p>
+                <p class="album-text">{{item.payload.doc.data().requiredAmount}}</p>
+                <p class="album-text">{{item.payload.doc.data().cdfundsDescription}}</p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-right-style"></fa>
+                <fa name="pencil" class="edit-pencil" (click)="editCdFunds(item)"></fa>
+                <fa name="trash" class="edit-trash"></fa>
               </div>
             </div>
           </div>

@@ -1,4 +1,3 @@
-<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
 <div class="container-fluid" no-padding>
   <div class="row login-box shadow">
     <div class="col-sm-12">
@@ -25,18 +24,22 @@
         </div>
       </div>
       <div class="login-box shadow" *ngFor="let item of items">
-        <div class="row" (click)="viewAlbum()">
+        <div class="row">
           <div class="col-sm-12">
             <div id="container">
               <div id="left">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+                <p><fa name="play" class="header-icon"></fa></p>
+                <!--<img class="align-self-start mr-5 img-thumbnail rounded-circle">-->
               </div>
               <div id="center">
                 <p class="album-text">{{item.payload.doc.data().videoTitle}}</p>
                 <p class="album-text">{{item.payload.doc.data().publishedDate}}</p>
+                <p class="album-text">{{item.payload.doc.data().videoURL}}</p>
+                <p class="album-text">{{item.payload.doc.data().videoDescription}}</p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-right-style"></fa>
+                <fa name="pencil" class="edit-pencil" (click)="editVideo(item)"></fa>
+                <fa name="trash" class="edit-trash"></fa>
               </div>
             </div>
           </div>

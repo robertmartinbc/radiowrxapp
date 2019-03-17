@@ -3,7 +3,6 @@ import { VideosService } from '../shared/services/videos.service';
 import { Router, Params } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
-
 @Component({
   selector: 'app-my-bands-videos',
   templateUrl: './my-bands-videos.component.html',
@@ -48,5 +47,9 @@ export class MyBandsVideosComponent implements OnInit {
         this.noData = false;
       }
     })
+  }
+
+  editVideo(item) {
+    this.router.navigate(['/edit-video-details/' + item.payload.doc.id]);
   }
 }

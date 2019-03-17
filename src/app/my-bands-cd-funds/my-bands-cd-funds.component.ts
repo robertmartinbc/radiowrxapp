@@ -49,4 +49,8 @@ export class MyBandsCdFundsComponent implements OnInit {
     })
   }
 
+  editCdFunds(item) {
+    this.router.navigate(['/edit-cd-funds-details/' + item.payload.doc.id]);
+  }
+
 }

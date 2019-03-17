@@ -52,5 +52,4 @@ export class MyBandsMembersComponent implements OnInit {
   editMember(item) {
     this.router.navigate(['/edit-member-details/' + item.payload.doc.id]);
   }
-
 }
