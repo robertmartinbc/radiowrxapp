@@ -49,6 +49,7 @@ export class MyBandsEventsComponent implements OnInit {
     })
   }
 
-
-
+  editEvent(item) {
+    this.router.navigate(['/edit-event-details/' + item.payload.doc.id]);
+  }
 }

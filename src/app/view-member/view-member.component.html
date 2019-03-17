@@ -1,3 +1,30 @@
-<p>
-  view-member works!
-</p>
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container-fluid" no-padding>
+  <div class="row login-box shadow" no-padding>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/my-bands-members"></fa><fa name="users" class="header-icon"></fa>Members</h5></div>
+        </div>
+      </div>
+        <hr />
+      <div class="login-box shadow">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="container">
+              <div id="left">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+              </div>
+              <div id="center">
+                <p class="album-text">{{this.item.memberName}}</p>
+                <p class="album-text">{{this.item.memberBio}}</p>
+              </div>
+              <div id="right">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

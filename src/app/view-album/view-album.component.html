@@ -1,3 +1,32 @@
-<p>
-  view-album works!
-</p>
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container-fluid" no-padding>
+  <div class="row login-box shadow" no-padding>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/my-bands-music"></fa><fa name="headphones" class="header-icon"></fa>{{this.item.albumTitle}}</h5></div>
+          <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-song"></fa></div>
+        </div>
+      </div>
+        <hr />
+      <div class="login-box shadow">
+        <div class="row" (click)="viewAlbum(item)">
+          <div class="col-sm-12">
+            <div id="container">
+              <div id="left">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+              </div>
+              <div id="center">
+                <p class="album-text">{{this.item.albumTitle}}</p>
+                <p class="album-text"></p>
+              </div>
+              <div id="right">
+                <fa name="chevron-right" class="chevron-style"></fa>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

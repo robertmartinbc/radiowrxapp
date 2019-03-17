@@ -4,7 +4,7 @@
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12">
-          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/profile"></fa><fa name="users" class="header-member"></fa>Members</h5></div>
+          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/profile"></fa><fa name="users" class="header-icon"></fa>Members</h5></div>
           <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-member"></fa></div>
         </div>
       </div>
@@ -16,7 +16,7 @@
         </div>
         <div class="col-sm-4 text-center">
           <p class="nodata-msg">You have not added any Members.</p>
-          <fa name="users" class="member"></fa>
+          <fa name="users" class="no-data-icon"></fa>
           <button routerLink="/create-member" class="btn btn-outline-danger btn-block btn-sm">
             Add Member
           </button>
@@ -25,18 +25,22 @@
         </div>
       </div>
       <div class="login-box shadow" *ngFor="let item of items">
-        <div class="row" (click)="viewMember()">
+        <div class="row">
           <div class="col-sm-12">
             <div id="container">
               <div id="left">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+                <p><fa name="user" class="header-icon"></fa></p>
+                <!--<img class="align-self-start mr-5 img-thumbnail rounded-circle">-->
               </div>
               <div id="center">
                 <p class="album-text">{{item.payload.doc.data().memberName}}</p>
-                <p class="album-text"></p>
+                <p class="album-text">{{item.payload.doc.data().memberInstrument}}</p>
+                <p class="album-text">{{item.payload.doc.data().memberDOB}}</p>
+                <p class="album-text">{{item.payload.doc.data().memberBio}}</p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-right-style"></fa>
+                <fa name="pencil" class="edit-pencil" (click)="editMember(item)"></fa>
+                <fa name="trash" class="edit-trash"></fa>
               </div>
             </div>
           </div>

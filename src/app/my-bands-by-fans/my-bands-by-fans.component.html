@@ -8,7 +8,7 @@
           <div id="element2"><fa name="plus fa-lg" class="add-bandsbyfans" routerLink="/create-bands-by-fans"></fa></div>
         </div>
       </div>
-        <hr />
+      <hr />
       <!-- No data shows when their is no student data available -->
       <div class="row" *ngIf="noData">
         <div class="col-sm-4">
@@ -16,7 +16,7 @@
         </div>
         <div class="col-sm-4 text-center">
           <p class="nodata-msg">You have not added any Bands By Fans.</p>
-          <fa name="heartbeat" class="heartbeat"></fa>
+          <fa name="heartbeat" class="no-data-icon"></fa>
           <button routerLink="/create-bands-by-fans" class="btn btn-outline-danger btn-block btn-sm">
             Add Bands By Fans
           </button>
@@ -36,7 +36,7 @@
                 <p class="album-text">{{item.payload.doc.data().ticketPrice}}</p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-style"></fa>
+                <fa name="chevron-right" class="chevron-right-style"></fa>
               </div>
             </div>
           </div>

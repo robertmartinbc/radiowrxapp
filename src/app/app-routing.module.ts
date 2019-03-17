@@ -27,6 +27,7 @@ import { CreateAlbumComponent } from './create-album/create-album.component';
 import { EditAlbumComponent } from './edit-album/edit-album.component';
 import { ViewAlbumComponent } from './view-album/view-album.component';
 import { EditAlbumResolver } from './edit-album/edit-album.resolver';
+import { ViewAlbumResolver } from './view-album/view-album.resolver';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { ViewEventComponent } from './view-event/view-event.component';
@@ -34,6 +35,7 @@ import { EditEventResolver } from './edit-event/edit-event.resolver';
 import { CreateMemberComponent } from './create-member/create-member.component';
 import { EditMemberComponent } from './edit-member/edit-member.component';
 import { ViewMemberComponent } from './view-member/view-member.component';
+import { ViewMemberResolver } from './view-member/view-member.resolver';
 import { EditMemberResolver } from './edit-member/edit-member.resolver';
 import { CreateVideoComponent } from './create-video/create-video.component';
 import { EditVideoComponent } from './edit-video/edit-video.component';
@@ -47,7 +49,8 @@ import { CreateBandsByFansComponent } from './create-bands-by-fans/create-bands-
 import { EditBandsByFansComponent } from './edit-bands-by-fans/edit-bands-by-fans.component';
 import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fans.component';
 import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans.resolver';
-
+import { CreateSongComponent } from './create-song/create-song.component';
+import { EditSongComponent } from './edit-song/edit-song.component';
 
 import { AuthGuard } from './shared/services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './shared/services/guard/secure-inner-pages.guard';
@@ -79,16 +82,18 @@ const routes: Routes = [
   { path: 'profile-details/:id', component: EditProfileComponent, resolve:{data: EditProfileResolver}},
   { path: 'create-album', component: CreateAlbumComponent, canActivate: [AuthGuard] },
   { path: 'view-album', component: ViewAlbumComponent, canActivate: [AuthGuard] },
+  { path: 'view-album-details/:id', component: ViewAlbumComponent, resolve:{data: ViewAlbumResolver} },
   { path: 'edit-album', component: EditAlbumComponent, canActivate: [AuthGuard] },
   { path: 'album-details/:id', component: EditAlbumComponent, resolve:{data: EditAlbumResolver}},
   { path: 'create-event', component: CreateEventComponent, canActivate: [AuthGuard] },
   { path: 'view-event', component: ViewEventComponent, canActivate: [AuthGuard] },
   { path: 'edit-event', component: EditEventComponent, canActivate: [AuthGuard] },
-  { path: 'event-details/:id', component: EditEventComponent, resolve:{data: EditEventResolver}},
+  { path: 'edit-event-details/:id', component: EditEventComponent, resolve:{data: EditEventResolver}},
   { path: 'create-member', component: CreateMemberComponent, canActivate: [AuthGuard] },
   { path: 'view-member', component: ViewMemberComponent, canActivate: [AuthGuard] },
+  { path: 'view-member-details/:id', component: ViewMemberComponent, resolve:{data: ViewMemberResolver}},
   { path: 'edit-member', component: EditMemberComponent, canActivate: [AuthGuard] },
-  { path: 'member-details/:id', component: EditMemberComponent, resolve:{data: EditMemberResolver}},
+  { path: 'edit-member-details/:id', component: EditMemberComponent, resolve:{data: EditMemberResolver}},
   { path: 'create-video', component: CreateVideoComponent, canActivate: [AuthGuard] },
   { path: 'view-video', component: ViewVideoComponent, canActivate: [AuthGuard] },
   { path: 'edit-video', component: EditVideoComponent, canActivate: [AuthGuard] },
@@ -100,7 +105,8 @@ const routes: Routes = [
   { path: 'create-bands-by-fans', component: CreateBandsByFansComponent, canActivate: [AuthGuard] },
   { path: 'view-bands-by-fans', component: ViewBandsByFansComponent, canActivate: [AuthGuard] },
   { path: 'edit-bands-by-fans', component: EditBandsByFansComponent, canActivate: [AuthGuard] },
-  { path: 'bands-by-fans-details/:id', component: EditBandsByFansComponent, resolve:{data: EditBandsByFansResolver}}
+  { path: 'bands-by-fans-details/:id', component: EditBandsByFansComponent, resolve:{data: EditBandsByFansResolver}},
+
 ];
 
 @NgModule({

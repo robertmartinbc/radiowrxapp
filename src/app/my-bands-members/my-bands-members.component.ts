@@ -3,7 +3,6 @@ import { MembersService } from '../shared/services/members.service';
 import { Router, Params } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
-
 @Component({
   selector: 'app-my-bands-members',
   templateUrl: './my-bands-members.component.html',
@@ -33,8 +32,8 @@ export class MyBandsMembersComponent implements OnInit {
     })
   }
 
-  viewMember() {
-    this.router.navigate(['view-member']);
+  viewMember(item) {
+    this.router.navigate(['/view-member-details/' + item.payload.doc.id]);
   }
 
   dataState() {
@@ -48,6 +47,10 @@ export class MyBandsMembersComponent implements OnInit {
         this.noData = false;
       }
     })
+  }
+
+  editMember(item) {
+    this.router.navigate(['/edit-member-details/' + item.payload.doc.id]);
   }
 
 }

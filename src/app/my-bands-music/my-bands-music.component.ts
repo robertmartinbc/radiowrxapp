@@ -32,12 +32,8 @@ export class MyBandsMusicComponent implements OnInit {
     })
   }
 
-  /*viewAlbum(item) {
-    this.router.navigate(['/album-details/' + item.payload.doc.id]);
-  }*/
-
-  viewAlbum() {
-    this.router.navigate(['view-album']);
+  viewAlbum(item) {
+    this.router.navigate(['/view-album-details/' + item.payload.doc.id]);
   }
 
   dataState() {

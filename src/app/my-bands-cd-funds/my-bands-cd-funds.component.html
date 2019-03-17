@@ -8,16 +8,16 @@
           <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-cd-funds"></fa></div>
         </div>
       </div>
-        <hr />
+      <hr />
       <!-- No data shows when their is no student data available -->
       <div class="row" *ngIf="noData">
         <div class="col-sm-4">
 
         </div>
         <div class="col-sm-4 text-center">
-          <p class="nodata-msg">You have not added any CD Funds Packages.</p>
-          <fa name="dollar" class="dollar"></fa>
-          <button routerLink="/create-video" class="btn btn-outline-danger btn-block btn-sm">
+          <p class="nodata-msg">You have not added any CD Funds.</p>
+          <fa name="dollar" class="no-data-icon"></fa>
+          <button routerLink="/create-cd-funds" class="btn btn-outline-danger btn-block btn-sm">
             Add CD Funds
           </button>
         </div>
@@ -36,7 +36,7 @@
                 <p class="album-text">{{item.payload.doc.data().expectationDate}}</p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-style"></fa>
+                <fa name="chevron-right" class="chevron-right-style"></fa>
               </div>
             </div>
           </div>

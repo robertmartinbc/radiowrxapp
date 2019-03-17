@@ -1,3 +1,47 @@
-<p>
-  view-bands-by-fans works!
-</p>
+<h3 class="statement-text">Your Band. Your Music. Everywhere.</h3>
+<div class="container-fluid" no-padding>
+  <div class="row login-box shadow" no-padding>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/profile"></fa><fa name="heartbeat" class="header-icon"></fa>Bands By Fans</h5></div>
+          <div id="element2"><fa name="times fa-lg" class="action-event" routerLink="/my-bands-by-fans"></fa></div>
+        </div>
+      </div>
+        <hr />
+      <!-- No data shows when their is no student data available -->
+      <div class="row" *ngIf="noData">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4 text-center">
+          <p class="nodata-msg">You have not added any Bands By Fans.</p>
+          <fa name="heartbeat" class="heartbeat"></fa>
+          <button routerLink="/create-bands-by-fans" class="btn btn-outline-danger btn-block btn-sm">
+            Add Bands By Fans
+          </button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+      <div class="login-box shadow" *ngFor="let item of items">
+        <div class="row" (click)="viewBandsByFans()">
+          <div class="col-sm-12">
+            <div id="container">
+              <div id="left">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+              </div>
+              <div id="center">
+                <p class="album-text">{{item.payload.doc.data().chosenCountry}}</p>
+                <p class="album-text">{{item.payload.doc.data().ticketPrice}}</p>
+              </div>
+              <div id="right">
+                <fa name="chevron-right" class="chevron-style"></fa>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

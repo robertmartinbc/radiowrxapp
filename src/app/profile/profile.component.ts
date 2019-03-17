@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  viewProfile(item) {
+  editProfile(item) {
     this.router.navigate(['/profile-details/' + item.payload.doc.id]);
   }
 
