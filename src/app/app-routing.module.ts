@@ -133,6 +133,7 @@ const routes: Routes = [
   { path: 'view-bands-by-fans', component: ViewBandsByFansComponent, canActivate: [AuthGuard] },
   { path: 'edit-bands-by-fans', component: EditBandsByFansComponent, canActivate: [AuthGuard] },
   { path: 'edit-bands-by-fans-details/:id', component: EditBandsByFansComponent, resolve:{data: EditBandsByFansResolver}},
+  { path: 'create-song', component: CreateSongComponent, canActivate: [AuthGuard] },
 
 ];
 

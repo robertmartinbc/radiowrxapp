@@ -1,3 +1,112 @@
-<p>
-  create-song works!
-</p>
+<div class="container-fluid" no-padding>
+  <div class="row login-box shadow" no-padding>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5 class="create-label-style"><fa name="headphones" class="header-icon"></fa>Create Your Album</h5></div>
+          <div id="element2"><fa name="times fa-lg" class="action-event" routerLink="/my-bands-music"></fa></div>
+        </div>
+      </div>
+      <hr class="create-hr-style" />
+      <form [formGroup]="songForm" (ngSubmit)="onSubmit(songForm.value)">
+        <div class="form-row">
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Title</label>
+            <input type="text" formControlName="songTitle" class="form-control form-control-sm" placeholder="Song Title" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Song No.</label>
+            <input type="number" formControlName="songNumber" class="form-control form-control-sm" placeholder="Song No." required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">ISRC</label>
+            <input formControlName="isrcCode" class="form-control form-control-sm" placeholder="ISRC" required />
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">ISWC</label>
+            <input formControlName="iswcCode" class="form-control form-control-sm" placeholder="ISWC" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Seconds</label>
+            <input type="number" formControlName="durationSeconds" class="form-control form-control-sm" placeholder="Seconds" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Minutes</label>
+            <input type="number" formControlName="durationMinutes" class="form-control form-control-sm" placeholder="Minutes" required />
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Writers</label>
+            <input type="text" formControlName="songWriters" class="form-control form-control-sm" placeholder="Song Writers" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Publisher</label>
+            <input type="text" formControlName="publisher" class="form-control form-control-sm" placeholder="Publisher" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Label Name</label>
+            <input type="text" formControlName="labelName" class="form-control form-control-sm" placeholder="Label Name" required />
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Product Catalogue No.</label>
+            <input type="text" formControlName="productCatalogueNumber" class="form-control form-control-sm" placeholder="Product Catalogue Number" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Disc No.</label>
+            <input type="text" formControlName="discNumber" class="form-control form-control-sm" placeholder="Disc Number" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">GRID</label>
+            <input type="text" formControlName="grid" class="form-control form-control-sm" placeholder="GRID" required />
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Bundle Name</label>
+            <input type="text" formControlName="bundleName" class="form-control form-control-sm" placeholder="Bundle Name" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Bundle Id</label>
+            <input type="text" formControlName="bundleId" class="form-control form-control-sm" placeholder="Bundle Id" required />
+          </div>
+          <div class="col-sm-4 form-group">
+            <label class="create-label-style">Product Name</label>
+            <input type="text" formControlName="productName" class="form-control form-control-sm" placeholder="Physical Product Name" required />
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-12">
+            <label class="create-label-style">Description</label>
+            <textarea type="text" formControlName="description" class="form-control form-control-sm" placeholder="Describe Your Song"></textarea>
+          </div>
+        </div>
+        <hr class="create-hr-style" />
+        <div class="form-row">
+          <div class="col-sm-3">
+
+          </div>
+          <div class="col-sm-3 form-group">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="songForm.invalid">Create</button>
+          </div>
+          <div class=" form-group col-sm-3">
+            <button type="submit" class="btn btn-danger btn-block" routerLink="/my-bands-music">Cancel</button>
+          </div>
+          <div class="col-sm-3">
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

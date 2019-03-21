@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { AlbumService } from '../shared/services/album.service';
+import { SongService } from '../shared/services/song.service';
 import { Router, Params } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
+
 @Component({
-  selector: 'app-my-bands-music',
-  templateUrl: './my-bands-music.component.html',
-  styleUrls: ['./my-bands-music.component.scss']
+  selector: 'app-view-song-list',
+  templateUrl: './view-song-list.component.html',
+  styleUrls: ['./view-song-list.component.scss']
 })
-export class MyBandsMusicComponent implements OnInit {
+export class ViewSongListComponent implements OnInit {
   items: Array<any>;
   hideWhenNoStudent: boolean = false; //Hide albums table if no albums created.
   noData: boolean = false;
   preLoader: boolean = true;
 
   constructor(
-    private albumService: AlbumService,
+    private songService: SongService,
     public router: Router,
     private afAuth: AuthService
   ) { }
@@ -26,19 +27,14 @@ export class MyBandsMusicComponent implements OnInit {
   }
 
   getData() {
-    this.albumService.getAlbums()
+    this.songService.getSongs()
     .subscribe(result => {
       this.items = result;
-      console.log(this.items);
     })
   }
 
-  viewAlbum(item) {
-    this.router.navigate(['/view-album-details/' + item.payload.doc.id]);
-  }
-
   dataState() {
-    this.albumService.getAlbums().subscribe(data => {
+    this.songService.getSongs().subscribe(data => {
       this.preLoader = false;
       if(data.length <= 0){
         this.hideWhenNoStudent = false;
