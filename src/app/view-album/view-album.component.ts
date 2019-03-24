@@ -13,6 +13,9 @@ import { SongService } from '../shared/services/song.service';
 export class ViewAlbumComponent implements OnInit {
   item: any;
   items: Array<any>;
+  hideWhenNoStudent: boolean = false; //Hide albums table if no albums created.
+  noData: boolean = false;
+  preLoader: boolean = true;
 
   constructor(
     private router: Router,
@@ -28,6 +31,7 @@ export class ViewAlbumComponent implements OnInit {
         this.item = data.payload.data();
         this.item.id = data.payload.id;
         this.getSongData();
+        this.dataState();
       }
     })
   }
@@ -37,6 +41,19 @@ export class ViewAlbumComponent implements OnInit {
     .subscribe(result => {
       this.items = result;
       console.log(this.items);
+    })
+  }
+
+  dataState() {
+    this.songService.getSongs().subscribe(data => {
+      this.preLoader = false;
+      if(data.length <= 0){
+        this.hideWhenNoStudent = false;
+        this.noData = true;
+      } else {
+        this.hideWhenNoStudent = true;
+        this.noData = false;
+      }
     })
   }
 

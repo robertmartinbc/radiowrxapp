@@ -111,7 +111,7 @@ const routes: Routes = [
   { path: 'view-album', component: ViewAlbumComponent, canActivate: [AuthGuard] },
   { path: 'view-album-details/:id', component: ViewAlbumComponent, resolve:{data: ViewAlbumResolver} },
   { path: 'edit-album', component: EditAlbumComponent, canActivate: [AuthGuard] },
-  { path: 'album-details/:id', component: EditAlbumComponent, resolve:{data: EditAlbumResolver}},
+  { path: 'edit-album-details/:id', component: EditAlbumComponent, resolve:{data: EditAlbumResolver}},
   { path: 'create-event', component: CreateEventComponent, canActivate: [AuthGuard] },
   { path: 'view-event', component: ViewEventComponent, canActivate: [AuthGuard] },
   { path: 'edit-event', component: EditEventComponent, canActivate: [AuthGuard] },

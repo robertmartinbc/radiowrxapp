@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { AlbumService } from '../shared/services/album.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class CreateAlbumComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private location: Location,
     private albumService: AlbumService
   ) { }
 
@@ -52,8 +54,13 @@ export class CreateAlbumComponent implements OnInit {
     .then(
       res => {
         this.resetFields();
-        this.router.navigate(['/my-bands-music']);
+        this.location.back();
+        //this.router.navigate(['/my-bands-music']);
       }
     )
+  }
+
+  cancel() {
+    this.location.back();
   }
 }

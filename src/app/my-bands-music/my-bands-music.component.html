@@ -24,18 +24,18 @@
         </div>
       </div>
       <div class="login-box shadow" *ngFor="let item of items">
-        <div class="row" (click)="viewAlbum(item)">
+        <div class="row">
           <div class="col-sm-12">
             <div id="container">
-              <div id="left">
+              <div id="left" (click)="viewAlbum(item)">
                 <img class="align-self-start mr-5 img-thumbnail rounded-circle">
               </div>
-              <div id="center">
+              <div id="center" (click)="viewAlbum(item)">
                 <p class="album-text">{{item.payload.doc.data().albumTitle}}</p>
                 <p class="album-text">{{item.payload.doc.data().yearReleased}}</p>
               </div>
               <div id="right">
-                <fa name="chevron-right" class="chevron-style"></fa>
+                <span class="edit-button" (click)="editAlbum(item)">Edit</span><span class="view-button" (click)="viewAlbum(item)">View</span>
               </div>
             </div>
           </div>

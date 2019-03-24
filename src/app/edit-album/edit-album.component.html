@@ -1,7 +1,12 @@
 <div class="container-fluid" no-padding>
   <div class="row login-box shadow" no-padding>
     <div class="col-sm-12">
-      <h5 class="statement-text edit-header">Edit Your Album</h5>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="element1"><h5 class="edit-label-style"><fa name="headphones" class="header-icon"></fa>{{this.item.albumTitle}}</h5></div>
+          <div id="element2"><fa name="times fa-lg" class="action-event" routerLink="/my-bands-music"></fa></div>
+        </div>
+      </div>
       <hr class="edit-hr-style" />
       <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)">
         <div class="form-row">
@@ -51,16 +56,13 @@
         </div>
         <hr class="edit-hr-style" />
         <div class="form-row">
-          <div class="col-sm-3">
+          <div class="col-sm-4 form-group">
 
           </div>
-          <div class="col-sm-3 form-group">
+          <div class=" form-group col-sm-4">
             <button type="submit" class="btn btn-primary btn-block" [disabled]="editForm.invalid">Update</button>
           </div>
-          <div class=" form-group col-sm-3">
-            <button type="submit" class="btn btn-danger btn-block" (click)="cancel()">Cancel</button>
-          </div>
-          <div class="col-sm-3">
+          <div class="col-sm-4">
 
           </div>
         </div>

@@ -3,8 +3,8 @@
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12">
-          <div id="element1"><h5 class="create-label-style"><fa name="headphones" class="header-icon"></fa>Create Your Album</h5></div>
-          <div id="element2"><fa name="times fa-lg" class="action-event" routerLink="/my-bands-music"></fa></div>
+          <div id="element1"><h5 class="create-label-style"><fa name="headphones" class="header-icon"></fa>Create Song</h5></div>
+          <div id="element2"><fa name="times fa-lg" class="action-event" (click)="cancel()"></fa></div>
         </div>
       </div>
       <hr class="create-hr-style" />
@@ -92,16 +92,13 @@
         </div>
         <hr class="create-hr-style" />
         <div class="form-row">
-          <div class="col-sm-3">
+          <div class="col-sm-4 form-group">
 
           </div>
-          <div class="col-sm-3 form-group">
+          <div class="col-sm-4 form-group">
             <button type="submit" class="btn btn-primary btn-block" [disabled]="songForm.invalid">Create</button>
           </div>
-          <div class=" form-group col-sm-3">
-            <button type="submit" class="btn btn-danger btn-block" routerLink="/my-bands-music">Cancel</button>
-          </div>
-          <div class="col-sm-3">
+          <div class="col-sm-4 form-group">
 
           </div>
         </div>

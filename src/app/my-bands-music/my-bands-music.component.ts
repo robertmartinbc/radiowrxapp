@@ -41,6 +41,12 @@ export class MyBandsMusicComponent implements OnInit {
     //localStorage.setItem(docId);
   }
 
+  editAlbum(item, docId) {
+    this.router.navigate(['/edit-album-details/' + item.payload.doc.id]);
+    docId = item.payload.doc.id;
+    localStorage.setItem('docId', docId);
+  }
+
   dataState() {
     this.albumService.getAlbums().subscribe(data => {
       this.preLoader = false;

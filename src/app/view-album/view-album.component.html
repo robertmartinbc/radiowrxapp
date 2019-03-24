@@ -1,5 +1,5 @@
 <div class="container-fluid" no-padding>
-  <div class="row" no-padding>
+  <div class="row login-box shadow" no-padding>
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12">
@@ -7,7 +7,21 @@
           <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-song"></fa></div>
         </div>
       </div>
-        <hr />
+      <hr />
+      <div class="row" *ngIf="noData">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4 text-center">
+          <p class="nodata-msg">You have not added any Songs.</p>
+          <fa name="music" class="no-data-icon"></fa>
+          <button routerLink="/create-song" class="btn btn-outline-danger btn-block btn-sm">
+            Add Song
+          </button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
       <div *ngFor="let item of items">
         <div class="row">
           <div class="col-sm-12">
