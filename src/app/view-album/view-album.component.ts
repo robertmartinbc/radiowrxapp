@@ -22,13 +22,29 @@ export class ViewAlbumComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getSongData();
+    this.route.data.subscribe(routeData => {
+      let data = routeData['data'];
+      if (data) {
+        this.item = data.payload.data();
+        this.item.id = data.payload.id;
+        this.getSongData();
+      }
+    })
   }
 
   getSongData() {
     this.songService.getSongs()
     .subscribe(result => {
       this.items = result;
+      console.log(this.items);
     })
+  }
+
+  playSong() {
+    alert("Song is about to play!");
+  }
+
+  editSong() {
+    alert("You're about to edit this song!");
   }
 }

@@ -70,7 +70,7 @@ export class CreateSongComponent implements OnInit {
     .then(
       res => {
         this.resetFields();
-        this.router.navigate(['/my-bands-music']);
+        this.router.navigate(['/view-album-details']);
       }
     )
   }
