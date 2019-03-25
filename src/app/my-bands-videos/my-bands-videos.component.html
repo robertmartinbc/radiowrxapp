@@ -3,8 +3,8 @@
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12">
-          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/profile"></fa><fa name="play" class="header-icon"></fa>Videos</h5></div>
-          <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-video"></fa></div>
+          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/profile" tooltip="Back to Dashboard" placement="right"></fa><fa name="play" class="header-icon"></fa>Videos</h5></div>
+          <div id="element2" tooltip="Add Video" placement="left"><fa name="plus fa-lg" class="action-event" routerLink="/create-video"></fa></div>
         </div>
       </div>
         <hr />
@@ -37,9 +37,8 @@
                 <p class="album-text">{{item.payload.doc.data().videoURL}}</p>
                 <p class="album-text">{{item.payload.doc.data().videoDescription}}</p>
               </div>
-              <div id="right">
+              <div id="right" tooltip="Edit Video" placement="left">
                 <fa name="pencil" class="edit-icon" (click)="editVideo(item)"></fa>
-                <fa name="trash" class="edit-trash"></fa>
               </div>
             </div>
           </div>
