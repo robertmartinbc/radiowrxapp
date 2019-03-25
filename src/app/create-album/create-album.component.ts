@@ -4,6 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { AlbumService } from '../shared/services/album.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { SomeComponent } from '../some/some.component';
 
 @Component({
   selector: 'app-create-album',
@@ -11,14 +13,15 @@ import { AlbumService } from '../shared/services/album.service';
   styleUrls: ['./create-album.component.scss']
 })
 export class CreateAlbumComponent implements OnInit {
-
+  modalRef: BsModalRef;
   albumForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private location: Location,
-    private albumService: AlbumService
+    private albumService: AlbumService,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit() {
@@ -62,5 +65,14 @@ export class CreateAlbumComponent implements OnInit {
 
   cancel() {
     this.location.back();
+  }
+
+  openModal() {
+    this.modalRef = this.modalService.show(SomeComponent, {
+      initialState: {
+        title: 'What is a UPC/EAN Code',
+        data: { }
+      }
+    });
   }
 }

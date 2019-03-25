@@ -35,7 +35,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TooltipModule } from 'ngx-bootstrap';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal'
 import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -107,6 +108,7 @@ import { CreateBandsByFansComponent } from './create-bands-by-fans/create-bands-
 import { EditBandsByFansComponent } from './edit-bands-by-fans/edit-bands-by-fans.component';
 import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fans.component';
 import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans.resolver';
+import { SomeComponent } from './some/some.component';
 
 @NgModule({
   declarations: [
@@ -153,7 +155,8 @@ import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans
     ViewBandsByFansComponent,
     MyBandsByFansComponent,
     EditSongComponent,
-    CreateSongComponent
+    CreateSongComponent,
+    SomeComponent
   ],
   imports: [
     BrowserModule,
@@ -170,12 +173,14 @@ import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     BrowserAnimationsModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [AuthService, ProfileService, EditProfileResolver,
               EditAlbumResolver, EditMemberResolver, EditEventResolver,
               EditVideoResolver, EditCdFundsResolver, EditBandsByFansResolver,
               ViewAlbumResolver, ViewMemberResolver, EditSongResolver],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SomeComponent]
 })
 export class AppModule { }
