@@ -48,6 +48,7 @@ import { ViewAlbumResolver } from './view-album/view-album.resolver';
 // CRUD routes for Bands to add Songs to Albums
 import { CreateSongComponent } from './create-song/create-song.component';
 import { EditSongComponent } from './edit-song/edit-song.component';
+import { EditSongResolver } from './edit-song/edit-song.resolver';
 
 
 // Crud routes for Events
@@ -134,6 +135,8 @@ const routes: Routes = [
   { path: 'edit-bands-by-fans', component: EditBandsByFansComponent, canActivate: [AuthGuard] },
   { path: 'edit-bands-by-fans-details/:id', component: EditBandsByFansComponent, resolve:{data: EditBandsByFansResolver}},
   { path: 'create-song', component: CreateSongComponent, canActivate: [AuthGuard] },
+  { path: 'edit-song', component: EditSongComponent, canActivate: [AuthGuard] },
+  { path: 'edit-song-details/:id', component: EditSongComponent, resolve:{data: EditSongResolver}}
 
 ];
 

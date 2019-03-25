@@ -35,6 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap';
 import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -74,6 +75,7 @@ import { ViewAlbumResolver } from './view-album/view-album.resolver';
 // These allow for Bands to CRUD songs and add to Albums
 import { EditSongComponent } from './edit-song/edit-song.component';
 import { CreateSongComponent } from './create-song/create-song.component';
+import { EditSongResolver } from './edit-song/edit-song.resolver';
 
 // These allow for Bands to CRUD Events
 import { CreateEventComponent } from './create-event/create-event.component';
@@ -167,12 +169,13 @@ import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans
     AngularFireDatabaseModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TooltipModule.forRoot()
   ],
   providers: [AuthService, ProfileService, EditProfileResolver,
               EditAlbumResolver, EditMemberResolver, EditEventResolver,
               EditVideoResolver, EditCdFundsResolver, EditBandsByFansResolver,
-              ViewAlbumResolver, ViewMemberResolver],
+              ViewAlbumResolver, ViewMemberResolver, EditSongResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

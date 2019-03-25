@@ -57,7 +57,7 @@ export class SongService {
       grid: value.grid,
       isrcCode: value.isrcCode,
       iswcCode: value.iswcCode,
-      bundleundleId: value.bundleId,
+      bundleId: value.bundleId,
       productName: value.productName,
       description: value.description
     })

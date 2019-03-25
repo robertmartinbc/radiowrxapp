@@ -61,7 +61,7 @@ export class ViewAlbumComponent implements OnInit {
     alert("Song is about to play!");
   }
 
-  editSong() {
-    alert("You're about to edit this song!");
+  editSong(item) {
+    this.router.navigate(['/edit-song-details/' + item.payload.doc.id]);
   }
 }

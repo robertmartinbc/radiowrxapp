@@ -3,8 +3,8 @@
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12">
-          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/my-bands-music"></fa><fa name="headphones" class="header-icon"></fa>{{this.item.albumTitle}}</h5></div>
-          <div id="element2"><fa name="plus fa-lg" class="action-event" routerLink="/create-song"></fa></div>
+          <div id="element1"><h5><fa name="chevron-left" class="chevron-left-style" routerLink="/my-bands-music" tooltip="Back to Music" placement="right"></fa><fa name="headphones" class="header-icon"></fa>{{this.item.albumTitle}}</h5></div>
+          <div id="element2" tooltip="Add Song" placement="left"><fa name="plus fa-lg" class="action-event" routerLink="/create-song"></fa></div>
         </div>
       </div>
       <hr />
@@ -34,7 +34,7 @@
                   <p class="album-text">{{item.payload.doc.data().songTitle}}</p>
                 </div>
               </div>
-              <div id="right" class="edit-icon" (click)="editSong()">
+              <div id="right" class="edit-icon" (click)="editSong(item)" tooltip="Edit Song" placement="left">
                 <fa name="pencil"></fa>
               </div>
             </div>
