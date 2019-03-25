@@ -1,9 +1,12 @@
 <div class="modal-header">
-  <h4 class="modal-title pull-left">{{ title }}</h4>
-  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+  <h5 class="modal-title pull-left info-title-text">{{ title }}</h5>
+  <button type="button" class="close pull-right close-modal" aria-label="Close" (click)="modalRef.hide()" tooltip="Close" placement="left">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<div class="modal-body">
-  This is a modal.
+<div class="modal-body info-body-text">
+  <p>
+    A UPC (Universal Product Code) or EAN (International Article Number) is a unique code used to
+    identify a product, such as an album, single or ringtone.
+  </p>
 </div>

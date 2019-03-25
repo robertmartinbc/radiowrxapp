@@ -108,7 +108,20 @@ import { CreateBandsByFansComponent } from './create-bands-by-fans/create-bands-
 import { EditBandsByFansComponent } from './edit-bands-by-fans/edit-bands-by-fans.component';
 import { ViewBandsByFansComponent } from './view-bands-by-fans/view-bands-by-fans.component';
 import { EditBandsByFansResolver } from './edit-bands-by-fans/edit-bands-by-fans.resolver';
+
+// These are the Modals for information purposes
 import { SomeComponent } from './some/some.component';
+import { IsrcComponent } from './modals/isrc/isrc.component';
+import { IswcComponent } from './modals/iswc/iswc.component';
+import { WritersComponent } from './modals/writers/writers.component';
+import { PublisherComponent } from './modals/publisher/publisher.component';
+import { LabelComponent } from './modals/label/label.component';
+import { ProductComponent } from './modals/product/product.component';
+import { DiscComponent } from './modals/disc/disc.component';
+import { GridComponent } from './modals/grid/grid.component';
+import { BundlenameComponent } from './modals/bundlename/bundlename.component';
+import { ProductnameComponent } from './modals/productname/productname.component';
+import { BundleidComponent } from './modals/bundleid/bundleid.component';
 
 @NgModule({
   declarations: [
@@ -156,7 +169,18 @@ import { SomeComponent } from './some/some.component';
     MyBandsByFansComponent,
     EditSongComponent,
     CreateSongComponent,
-    SomeComponent
+    SomeComponent,
+    IsrcComponent,
+    IswcComponent,
+    WritersComponent,
+    PublisherComponent,
+    LabelComponent,
+    ProductComponent,
+    DiscComponent,
+    GridComponent,
+    BundlenameComponent,
+    ProductnameComponent,
+    BundleidComponent
   ],
   imports: [
     BrowserModule,
@@ -181,6 +205,18 @@ import { SomeComponent } from './some/some.component';
               EditVideoResolver, EditCdFundsResolver, EditBandsByFansResolver,
               ViewAlbumResolver, ViewMemberResolver, EditSongResolver],
   bootstrap: [AppComponent],
-  entryComponents: [SomeComponent]
+  entryComponents: [
+  SomeComponent,
+  IsrcComponent,
+  IswcComponent,
+  WritersComponent,
+  PublisherComponent,
+  LabelComponent,
+  ProductComponent,
+  DiscComponent,
+  GridComponent,
+  BundlenameComponent,
+  ProductnameComponent,
+  BundleidComponent]
 })
 export class AppModule { }

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-some',
-  templateUrl: './some.component.html',
-  styleUrls: ['./some.component.scss']
+  selector: 'app-disc',
+  templateUrl: './disc.component.html',
+  styleUrls: ['./disc.component.scss']
 })
-export class SomeComponent implements OnInit {
+export class DiscComponent implements OnInit {
   title;
 
   constructor(

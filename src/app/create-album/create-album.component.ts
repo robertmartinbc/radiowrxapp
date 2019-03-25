@@ -70,7 +70,7 @@ export class CreateAlbumComponent implements OnInit {
   openModal() {
     this.modalRef = this.modalService.show(SomeComponent, {
       initialState: {
-        title: 'What is a UPC/EAN Code',
+        title: 'UPC/EAN',
         data: { }
       }
     });
