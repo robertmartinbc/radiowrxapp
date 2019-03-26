@@ -41,7 +41,9 @@ export class EditAlbumComponent implements OnInit {
       yearReleased: [this.item.yearReleased, Validators.required],
       numberOfTracks: [this.item.numberOfTracks, Validators.required],
       upcCode: [this.item.upcCode, Validators.required],
-      albumDuration: [this.item.albumDuration, Validators.required],
+      albumHours: [this.item.albumHours, Validators.required],
+      albumMinutes: [this.item.albumMinutes, Validators.required],
+      albumSeconds: [this.item.albumSeconds, Validators.required],
       description: [this.item.description, Validators.required]
     })
   }

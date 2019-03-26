@@ -36,7 +36,9 @@ export class CreateAlbumComponent implements OnInit {
       numberOfTracks: ['', Validators.required ],
       description: ['', Validators.required ],
       upcCode: ['', Validators.required ],
-      albumDuration: ['', Validators.required ]
+      albumHours: ['', Validators.required ],
+      albumMinutes: ['', Validators.required ],
+      albumSeconds: ['', Validators.required ]
     })
   }
 
@@ -48,7 +50,9 @@ export class CreateAlbumComponent implements OnInit {
       numberOfTracks: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       upcCode: new FormControl('', Validators.required),
-      albumDuration: new FormControl('', Validators.required)
+      albumHours: new FormControl('', Validators.required),
+      albumMinutes: new FormControl('', Validators.required),
+      albumSeconds: new FormControl('', Validators.required)
     })
   }
 

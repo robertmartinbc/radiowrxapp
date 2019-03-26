@@ -35,6 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal'
 import { AlertModule } from 'ngx-bootstrap';
@@ -198,7 +199,8 @@ import { BundleidComponent } from './modals/bundleid/bundleid.component';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     BrowserAnimationsModule,
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [AuthService, ProfileService, EditProfileResolver,
               EditAlbumResolver, EditMemberResolver, EditEventResolver,

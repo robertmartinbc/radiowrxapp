@@ -37,7 +37,9 @@ export class AlbumService {
       albumTitle: value.albumTitle,
       albumGenre: value.albumGenre,
       yearReleased: value.yearReleased,
-      albumDuration: value.albumDuration,
+      albumHours: value.albumHours,
+      albumMinutes: value.albumMinutes,
+      albumSeconds: value.albumSeconds,
       numberOfTracks: value.numberOfTracks,
       upcCode: value.upcCode,
       description: value.description
