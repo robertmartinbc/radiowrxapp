@@ -47,15 +47,15 @@ export class CreateSongComponent implements OnInit {
       durationMinutes: ['', Validators.required ],
       durationSeconds: ['', Validators.required ],
       publisher: ['', Validators.required ],
-      bundleName: ['', Validators.required ],
+      //bundleName: ['', Validators.required ],
       isrcCode: ['', Validators.required ],
       iswcCode: ['', Validators.required ],
       labelName: ['', Validators.required ],
       productCatalogueNumber: ['', Validators.required ],
       discNumber: ['', Validators.required ],
       grid: ['', Validators.required ],
-      bundleId: ['', Validators.required ],
-      productName: ['', Validators.required ],
+      //bundleId: ['', Validators.required ],
+      //productName: ['', Validators.required ],
       description: ['', Validators.required ]
     })
   }
@@ -68,15 +68,15 @@ export class CreateSongComponent implements OnInit {
       durationMinutes: new FormControl('', Validators.required),
       durationSeconds: new FormControl('', Validators.required),
       publisher: new FormControl('', Validators.required),
-      bundleName: new FormControl('', Validators.required),
+      //bundleName: new FormControl('', Validators.required),
       isrcCode: new FormControl('', Validators.required),
       iswcCode: new FormControl('', Validators.required),
       labelName: new FormControl('', Validators.required),
       productCatalogueNumber: new FormControl('', Validators.required),
       discNumber: new FormControl('', Validators.required),
       grid: new FormControl('', Validators.required),
-      bundleId: new FormControl('', Validators.required),
-      productName: new FormControl('', Validators.required),
+      //bundleId: new FormControl('', Validators.required),
+      //productName: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)
     })
   }
@@ -172,7 +172,7 @@ export class CreateSongComponent implements OnInit {
   openBundleNameModal() {
     this.modalRef = this.modalService.show(BundlenameComponent, {
       initialState: {
-        title: 'BundleName',
+        title: 'Bundle Name',
         data: { }
       }
     });
@@ -181,7 +181,7 @@ export class CreateSongComponent implements OnInit {
   openBundleIdModal() {
     this.modalRef = this.modalService.show(BundleidComponent, {
       initialState: {
-        title: 'Bindle Id',
+        title: 'Bundle Id',
         data: { }
       }
     });
@@ -190,7 +190,7 @@ export class CreateSongComponent implements OnInit {
   openProductNameModal() {
     this.modalRef = this.modalService.show(ProductnameComponent, {
       initialState: {
-        title: 'ProductName',
+        title: 'Product Name',
         data: { }
       }
     });

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-bundlename',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bundlename.component.scss']
 })
 export class BundlenameComponent implements OnInit {
+  title;
 
-  constructor() { }
+  constructor(
+    public modalRef: BsModalRef
+  ) { }
 
   ngOnInit() {
   }

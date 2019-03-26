@@ -44,15 +44,15 @@ export class EditSongComponent implements OnInit {
       durationSeconds: [this.item.durationSeconds, Validators.required],
       durationMinutes: [this.item.durationMinutes, Validators.required],
       publisher: [this.item.publisher, Validators.required],
-      bundleName: [this.item.bundleName, Validators.required],
+      //bundleName: [this.item.bundleName, Validators.required],
       labelName: [this.item.labelName, Validators.required],
       productCatalogueNumber: [this.item.productCatalogueNumber, Validators.required],
       discNumber: [this.item.discNumber, Validators.required],
       grid: [this.item.grid, Validators.required],
       isrcCode: [this.item.isrcCode, Validators.required],
       iswcCode: [this.item.iswcCode, Validators.required],
-      bundleId: [this.item.bundleId, Validators.required],
-      productName: [this.item.productName, Validators.required],
+      //bundleId: [this.item.bundleId, Validators.required],
+      //productName: [this.item.productName, Validators.required],
       description: [this.item.description, Validators.required]
     })
   }

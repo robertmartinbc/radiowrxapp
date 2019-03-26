@@ -50,15 +50,15 @@ export class SongService {
       durationSeconds: value.durationSeconds,
       durationMinutes: value.durationMinutes,
       publisher: value.publisher,
-      bundleName: value.bundleName,
+      //bundleName: value.bundleName,
       labelName: value.labelName,
       productCatalogueNumber: value.productCatalogueNumber,
       discNumber: value.discNumber,
       grid: value.grid,
       isrcCode: value.isrcCode,
       iswcCode: value.iswcCode,
-      bundleId: value.bundleId,
-      productName: value.productName,
+      //bundleId: value.bundleId,
+      //productName: value.productName,
       description: value.description
     })
   }
