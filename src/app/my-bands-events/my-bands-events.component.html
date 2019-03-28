@@ -7,8 +7,25 @@
           <div id="element2" tooltip="Add Event" placement="left"><fa name="plus fa-lg" class="action-event" routerLink="/create-event"></fa></div>
         </div>
       </div>
+      <hr />
     </div>
-    <hr />
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-danger btn-block">Upcoming</button>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-danger btn-block">Past</button>
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+      </div>
+      <hr />
+    </div>
     <!-- No data shows when their is no student data available -->
     <div class="row" *ngIf="noData">
       <div class="col-sm-4">
@@ -24,7 +41,7 @@
       <div class="col-sm-4">
       </div>
     </div>
-    <div class="login-box shadow center-events center-row" *ngFor="let item of items">
+    <div class="login-box shadow center-components center-row" *ngFor="let item of items">
       <div class="row">
         <div class="col-sm-12">
           <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">

@@ -7,37 +7,35 @@
           <div id="element2" tooltip="Add Album" placement="left"><fa name="plus fa-lg" class="action-event" routerLink="/create-album"></fa></div>
         </div>
       </div>
-        <hr />
-      <!-- No data shows when their is no student data available -->
-      <div class="row" *ngIf="noData">
-        <div class="col-sm-4">
+      <hr />
+    </div>
+    <!-- No data shows when their is no student data available -->
+    <div class="row" *ngIf="noData">
+      <div class="col-sm-4">
 
-        </div>
-        <div class="col-sm-4 text-center">
-          <p class="nodata-msg">You have not added any albums.</p>
-          <fa name="headphones" class="headphones"></fa>
-          <button routerLink="/create-album" class="btn btn-outline-danger btn-block btn-sm">
-            Add Album
-          </button>
-        </div>
-        <div class="col-sm-4">
-        </div>
       </div>
-      <div class="login-box shadow" *ngFor="let item of items">
-        <div class="row">
-          <div class="col-sm-12">
-            <div id="container">
-              <div id="left" (click)="viewAlbum(item)">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle">
-              </div>
-              <div id="center" (click)="viewAlbum(item)">
-                <p class="album-text">{{item.payload.doc.data().albumTitle}}</p>
-                <p class="album-text">{{item.payload.doc.data().yearReleased}}</p>
-              </div>
-              <div id="right">
-                <span class="edit-button" (click)="editAlbum(item)">Edit</span><span class="view-button" (click)="viewAlbum(item)">View</span>
-              </div>
-            </div>
+      <div class="col-sm-4 text-center">
+        <p class="nodata-msg">You have not added any albums.</p>
+        <fa name="headphones" class="headphones"></fa>
+        <button routerLink="/create-album" class="btn btn-outline-danger btn-block btn-sm">
+          Add Album
+        </button>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+    <div class="login-box shadow center-components center-row" *ngFor="let item of items">
+      <div class="row">
+        <div class="col-sm-12">
+          <div (click)="viewAlbum(item)">
+            <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+          </div>
+          <div (click)="viewAlbum(item)">
+            <p class="album-text">{{item.payload.doc.data().albumTitle}}</p>
+            <p class="album-text">{{item.payload.doc.data().yearReleased}}</p>
+          </div>
+          <div>
+            <span class="edit-button" (click)="editAlbum(item)">Edit</span><span class="view-button" (click)="viewAlbum(item)">View</span>
           </div>
         </div>
       </div>

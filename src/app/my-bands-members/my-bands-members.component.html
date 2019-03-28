@@ -7,8 +7,8 @@
           <div id="element2" tooltip="Add Member" placement="left"><fa name="plus fa-lg" class="action-event" routerLink="/create-member"></fa></div>
         </div>
       </div>
+      <hr />
     </div>
-        <hr />
       <!-- No data shows when their is no student data available -->
       <div class="row" *ngIf="noData">
         <div class="col-sm-4">
@@ -24,7 +24,7 @@
         <div class="col-sm-4">
         </div>
       </div>
-      <div class="login-box shadow center-events center-row" *ngFor="let item of items">
+      <div class="login-box shadow center-components center-row" *ngFor="let item of items">
         <div class="row">
           <div class="col-sm-12">
               <div>
