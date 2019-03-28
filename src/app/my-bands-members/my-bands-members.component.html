@@ -7,6 +7,7 @@
           <div id="element2" tooltip="Add Member" placement="left"><fa name="plus fa-lg" class="action-event" routerLink="/create-member"></fa></div>
         </div>
       </div>
+    </div>
         <hr />
       <!-- No data shows when their is no student data available -->
       <div class="row" *ngIf="noData">
@@ -23,27 +24,20 @@
         <div class="col-sm-4">
         </div>
       </div>
-      <div class="login-box shadow" *ngFor="let item of items">
+      <div class="login-box shadow center-events" *ngFor="let item of items">
         <div class="row">
           <div class="col-sm-12">
-            <div id="container">
-              <div id="left">
-                <p><fa name="user" class="header-icon"></fa></p>
-                <!--<img class="align-self-start mr-5 img-thumbnail rounded-circle">-->
-              </div>
-              <div id="center">
+              <div>
                 <p class="album-text">{{item.payload.doc.data().memberName}}</p>
                 <p class="album-text">{{item.payload.doc.data().memberInstrument}}</p>
                 <p class="album-text">{{item.payload.doc.data().memberDOB}}</p>
                 <p class="album-text">{{item.payload.doc.data().memberBio}}</p>
               </div>
-              <div id="right" tooltip="Edit Member" placement="left">
+              <div tooltip="Edit Member" placement="left">
                 <fa name="pencil" class="edit-icon" (click)="editMember(item)"></fa>
               </div>
-            </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>

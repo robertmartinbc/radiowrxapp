@@ -11,7 +11,7 @@ import { EventsService } from '../shared/services/events.service';
   styleUrls: ['./create-event.component.scss']
 })
 export class CreateEventComponent implements OnInit {
-
+  
   eventForm: FormGroup;
 
   constructor(
@@ -31,7 +31,9 @@ export class CreateEventComponent implements OnInit {
       eventVenue: ['', Validators.required ],
       eventPostcode: ['', Validators.required ],
       eventDate: ['', Validators.required ],
-      eventStartTime: ['', Validators.required ],
+      eventStartHour: ['', Validators.required ],
+      eventStartMinute: ['', Validators.required ],
+      eventStartAmPm: ['', Validators.required ],
       eventPrice: ['', Validators.required ],
       availableTickets: ['', Validators.required ]
     })
@@ -44,7 +46,9 @@ export class CreateEventComponent implements OnInit {
       eventVenue: new FormControl('', Validators.required),
       eventPostcode: new FormControl('', Validators.required),
       eventDate: new FormControl('', Validators.required),
-      eventStartTime: new FormControl('', Validators.required),
+      eventStartHour: new FormControl('', Validators.required),
+      eventStartMinute: new FormControl('', Validators.required),
+      eventStartAmPm: new FormControl('', Validators.required),
       eventPrice: new FormControl('', Validators.required),
       avialableTickets: new FormControl('', Validators.required),
     })

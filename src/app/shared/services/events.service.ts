@@ -39,7 +39,9 @@ export class EventsService {
       eventVenue: value.eventVenue,
       eventPostcode: value.eventPostcode,
       eventDate: value.eventDate,
-      eventStartTime: value.eventStartTime,
+      eventStartHour: value.eventStartHour,
+      eventStartMinute: value.eventStartMinute,
+      eventStartAmPm: value.eventStartAmPm,
       eventPrice: value.eventPrice,
       availableTickets: value.availableTickets
     })
