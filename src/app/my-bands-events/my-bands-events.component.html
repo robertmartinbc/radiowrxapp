@@ -26,7 +26,10 @@
     </div>
     <div class="login-box shadow center-events" *ngFor="let item of items">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
+          <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+            <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
           <p class="album-text">{{item.payload.doc.data().eventTitle}}</p>
           <p class="album-text">{{item.payload.doc.data().eventVenue}}</p>
           <p class="album-text">{{item.payload.doc.data().eventStartTime}}</p>
