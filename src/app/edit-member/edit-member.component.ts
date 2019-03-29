@@ -38,7 +38,8 @@ export class EditMemberComponent implements OnInit {
       memberName: [this.item.memberName, Validators.required],
       memberInstrument: [this.item.memberInstrument, Validators.required],
       memberDOB: [this.item.memberDOB, Validators.required],
-      memberBio: [this.item.memberBio, Validators.required]
+      memberBio: [this.item.memberBio, Validators.required],
+      memberImage: [this.item.memberImage, Validators.required]
     })
   }
 

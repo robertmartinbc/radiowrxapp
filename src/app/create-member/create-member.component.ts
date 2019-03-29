@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { MembersService } from '../shared/services/members.service';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @Component({
   selector: 'app-create-member',
@@ -16,7 +17,8 @@ export class CreateMemberComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private membersService: MembersService
+    private membersService: MembersService,
+    private afs: AngularFireStorageModule
   ) { }
 
   ngOnInit() {
@@ -28,7 +30,8 @@ export class CreateMemberComponent implements OnInit {
       memberName: ['', Validators.required ],
       memberBio: ['', Validators.required ],
       memberDOB: ['', Validators.required ],
-      memberInstrument: ['', Validators.required ]
+      memberInstrument: ['', Validators.required ],
+      memberImage: ['', Validators.required]
     })
   }
 
@@ -37,7 +40,8 @@ export class CreateMemberComponent implements OnInit {
       memberName: new FormControl('', Validators.required),
       memberBio: new FormControl('', Validators.required),
       memberDOB: new FormControl('', Validators.required),
-      memberInstrument: new FormControl('', Validators.required)
+      memberInstrument: new FormControl('', Validators.required),
+      memberImage: new FormControl('', Validators.required)
     })
   }
 
