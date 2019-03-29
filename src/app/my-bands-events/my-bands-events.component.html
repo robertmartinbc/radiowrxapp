@@ -8,55 +8,56 @@
         </div>
       </div>
       <hr />
-    </div>
-    <div class="col-sm-12">
-      <div class="row">
-        <div class="col-sm-3">
+      <!-- No data shows when there is no even data available -->
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-3">
+
+          </div>
+          <div class="col-sm-3">
+            <button class="btn btn-danger btn-block">Upcoming</button>
+          </div>
+          <div class="col-sm-3">
+            <button class="btn btn-danger btn-block">Past</button>
+          </div>
+          <div class="col-sm-3">
+
+          </div>
+        </div>
+        <hr />
+      </div>
+      <!-- No data shows when their is no student data available -->
+      <div class="row" *ngIf="noData">
+        <div class="col-sm-4">
 
         </div>
-        <div class="col-sm-3">
-          <button class="btn btn-danger btn-block">Upcoming</button>
+        <div class="col-sm-4 text-center">
+          <p class="nodata-msg">You have not added any Events.</p>
+          <fa name="calendar" class="no-data-icon"></fa>
+          <button routerLink="/create-member" class="btn btn-outline-danger btn-block btn-sm">
+            Add Event
+          </button>
         </div>
-        <div class="col-sm-3">
-          <button class="btn btn-danger btn-block">Past</button>
-        </div>
-        <div class="col-sm-3">
-
+        <div class="col-sm-4">
         </div>
       </div>
-      <hr />
-    </div>
-    <!-- No data shows when their is no student data available -->
-    <div class="row" *ngIf="noData">
-      <div class="col-sm-4">
-
-      </div>
-      <div class="col-sm-4 text-center">
-        <p class="nodata-msg">You have not added any Events.</p>
-        <fa name="calendar" class="no-data-icon"></fa>
-        <button routerLink="/create-member" class="btn btn-outline-danger btn-block btn-sm">
-          Add Event
-        </button>
-      </div>
-      <div class="col-sm-4">
-      </div>
-    </div>
-    <div class="login-box shadow center-components center-row" *ngFor="let item of items">
-      <div class="row">
-        <div class="col-sm-12">
-          <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
-            <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
-          </agm-map>
-          <p class="album-text">{{item.payload.doc.data().eventTitle}}</p>
-          <p class="album-text">{{item.payload.doc.data().eventVenue}}</p>
-          <p class="album-text">{{item.payload.doc.data().eventStartTime}}</p>
-          <p class="album-text">{{item.payload.doc.data().eventPrice}}</p>
-          <p class="album-text">{{item.payload.doc.data().eventPostcode}}</p>
-          <p class="album-text">{{item.payload.doc.data().availableTickets}}</p>
-          <p class="album-text">{{item.payload.doc.data().eventDescription}}</p>
-          <p class="album-text">{{item.payload.doc.data().eventDate}}</p>
-          <div tooltip="Edit Event" placement="left">
-            <fa name="pencil" class="edit-icon" (click)="editEvent(item)"></fa>
+      <div class="login-box shadow center-components center-row" *ngFor="let item of items">
+        <div class="row">
+          <div class="col-sm-12">
+            <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+              <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+            <p class="album-text">{{item.payload.doc.data().eventTitle}}</p>
+            <p class="album-text">{{item.payload.doc.data().eventVenue}}</p>
+            <p class="album-text">{{item.payload.doc.data().eventStartTime}}</p>
+            <p class="album-text">{{item.payload.doc.data().eventPrice}}</p>
+            <p class="album-text">{{item.payload.doc.data().eventPostcode}}</p>
+            <p class="album-text">{{item.payload.doc.data().availableTickets}}</p>
+            <p class="album-text">{{item.payload.doc.data().eventDescription}}</p>
+            <p class="album-text">{{item.payload.doc.data().eventDate}}</p>
+            <div tooltip="Edit Event" placement="left">
+              <fa name="pencil" class="edit-icon" (click)="editEvent(item)"></fa>
+            </div>
           </div>
         </div>
       </div>

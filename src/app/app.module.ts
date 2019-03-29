@@ -48,6 +48,10 @@ import { FormsModule } from "@angular/forms";
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { AgmCoreModule } from '@agm/core';
 import { TabsModule } from 'ngx-bootstrap/tabs'
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
 
 // This page is the landing page for the site if a user is not logged in
 import { MainPageComponent } from './main-page/main-page.component';
@@ -208,6 +212,9 @@ import { BundleidComponent } from './modals/bundleid/bundleid.component';
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     TabsModule.forRoot(),
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDOzf49n-sRTXrZqA7m4V7_EXjTuE5z-UQ'
     })
