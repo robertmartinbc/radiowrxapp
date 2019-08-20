@@ -4,11 +4,18 @@
       <div class="row">
         <div class="col-sm-12">
           <div id="element1"><h5><fa name="user" class="header-profile"></fa>Dashboard</h5></div>
+
           <!--<div id="element2"><fa name="pencil fa-lg" class="header-edit" routerLink="/edit-profile"></fa></div>-->
         </div>
       </div>
       <hr />
-      <div class="row">
+      <div class="row" *ngIf="changingImage">
+        <div class="col-sm-12">
+          <button class="btn btn-sm" (click)="saveNewImage()">Save</button>
+          Show this DIV
+        </div>
+      </div>
+      <div class="row" *ngIf="!changingImage">
         <div class="col-sm-12">
           <div id="icon1">
             <button class="btn btn-outline-danger btn-block" routerLink="/my-bands-music" tooltip="Music" placement="top"><fa name="headphones" class="nav-icons"></fa></button>
@@ -48,10 +55,15 @@
       </div>
       <div *ngFor="let item of items">
         <div class="row">
-          <div class="col-sm-2">
-            <img class="align-self-start mr-5 img-thumbnail rounded-circle">
+          <div class="col-sm-3">
+            <img src="http://placehold.it/128x128" class="style-image" />
+            <!--<fa name="user" class="user"></fa>-->
+
+            <div>
+              <button class="btn btn-primary btn-sm btn-block" (click)="changingImageClick()">Change</button>
+            </div>
           </div>
-          <div class="col-sm-7">
+          <div class="col-sm-9 profile-padding">
             <p>Artist: {{item.payload.doc.data().artistName}}</p>
             <p>Genre: {{item.payload.doc.data().artistGenre}}</p>
             <p>Year Formed: {{item.payload.doc.data().yearFormed}}</p>
@@ -62,12 +74,10 @@
             <p>Post Code: {{item.payload.doc.data().postCode}}</p>
             <p>Contact: {{item.payload.doc.data().contactNumber}}</p>
           </div>
-          <div class="col-sm-3">
-          </div>
         </div>
         <hr />
         <div class="row">
-          <div class="col-sm-1">
+          <div class="col-sm-3 spacer">
 
           </div>
           <div class="col-sm-3 spacer">
@@ -76,14 +86,11 @@
             </button>
           </div>
           <div class="col-sm-3 spacer">
-          </div>
-          <div class="col-sm-3">
             <button class="btn btn-primary btn-block" (click)="logOut()">
               Log Out
             </button>
           </div>
-          <div class="col-sm-1">
-
+          <div class="col-sm-3 spacer">
           </div>
         </div>
       </div>

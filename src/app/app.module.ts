@@ -86,6 +86,8 @@ import { ViewAlbumResolver } from './view-album/view-album.resolver';
 import { EditSongComponent } from './edit-song/edit-song.component';
 import { CreateSongComponent } from './create-song/create-song.component';
 import { EditSongResolver } from './edit-song/edit-song.resolver';
+import { ViewSongComponent } from './view-song/view-song.component';
+import { ViewSongListComponent } from './view-song-list/view-song-list.component';
 
 // These allow for Bands to CRUD Events
 import { CreateEventComponent } from './create-event/create-event.component';
@@ -178,6 +180,8 @@ import { BundleidComponent } from './modals/bundleid/bundleid.component';
     MyBandsByFansComponent,
     EditSongComponent,
     CreateSongComponent,
+    ViewSongComponent,
+    ViewSongListComponent,
     SomeComponent,
     IsrcComponent,
     IswcComponent,
@@ -217,7 +221,14 @@ import { BundleidComponent } from './modals/bundleid/bundleid.component';
     VgOverlayPlayModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDOzf49n-sRTXrZqA7m4V7_EXjTuE5z-UQ'
-    })
+    }),
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBb82HWWLtPM2i_anYPWmP45vPeI81B03o",
+      authDomain: "radiowrx-app.firebaseapp.com",
+      projectId: "radiowrx-app",
+      storageBucket: "radiowrx-app.appspot.com",
+    }),
+    AngularFireStorageModule
   ],
   providers: [AuthService, ProfileService, EditProfileResolver,
               EditAlbumResolver, EditMemberResolver, EditEventResolver,

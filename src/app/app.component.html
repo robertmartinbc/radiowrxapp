@@ -4,12 +4,12 @@
     RadioWRX Music
   </a>
 
-  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+  <button class="navbar-toggler" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 
-  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" routerLink="/bands">Bands</a>
@@ -35,7 +35,7 @@
         <a class="nav-link" routerLink="/contact">Contact</a>
       </li>
 
-      <li class="nav-item" *ngIf="!isLoggedIn">
+      <li class="nav-item">
         <a class="nav-link" routerLink="/login">Log in</a>
       </li>
 

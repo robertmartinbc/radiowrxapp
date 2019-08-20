@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   hideWhenNoStudent: boolean = false; // Hide students data table when no student.
   noData: boolean = false;            // Showing No Student Message, when no student in database.
   preLoader: boolean = true;
+  changingImage: boolean;
 
   constructor(
     public profileService: ProfileService,
@@ -52,5 +53,13 @@ export class ProfileComponent implements OnInit {
         this.noData = false;
       }
     })
+  }
+
+  changingImageClick() {
+    this.changingImage = true;
+  }
+
+  saveNewImage() {
+    this.changingImage = false;
   }
 }

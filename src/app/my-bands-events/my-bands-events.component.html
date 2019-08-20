@@ -8,7 +8,21 @@
         </div>
       </div>
       <hr />
-      <!-- No data shows when there is no even data available -->
+      <!-- No data shows when their is no student data available -->
+      <div class="row" *ngIf="noData">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4 text-center">
+          <p class="nodata-msg">You have not added any Events.</p>
+          <fa name="calendar" class="no-data-icon"></fa>
+          <button routerLink="/create-event" class="btn btn-outline-danger btn-block btn-sm">
+            Add Event
+          </button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
       <div class="col-sm-12">
         <div class="row">
           <div class="col-sm-3">
@@ -26,22 +40,8 @@
         </div>
         <hr />
       </div>
-      <!-- No data shows when their is no student data available -->
-      <div class="row" *ngIf="noData">
-        <div class="col-sm-4">
-
-        </div>
-        <div class="col-sm-4 text-center">
-          <p class="nodata-msg">You have not added any Events.</p>
-          <fa name="calendar" class="no-data-icon"></fa>
-          <button routerLink="/create-member" class="btn btn-outline-danger btn-block btn-sm">
-            Add Event
-          </button>
-        </div>
-        <div class="col-sm-4">
-        </div>
-      </div>
       <div class="login-box shadow center-components center-row" *ngFor="let item of items">
+        <!-- No data shows when there is no event data available -->
         <div class="row">
           <div class="col-sm-12">
             <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
