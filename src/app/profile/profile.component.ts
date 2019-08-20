@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../shared/services/profile.service';
 import { Router, Params } from "@angular/router";
 import { AuthService } from '../shared/services/auth.service';
+import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +10,9 @@ import { AuthService } from '../shared/services/auth.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
+  data: any;
+  cropperSettings: CropperSettings;
 
   items: Array<any>
   hideWhenNoStudent: boolean = false; // Hide students data table when no student.
@@ -20,7 +24,18 @@ export class ProfileComponent implements OnInit {
     public profileService: ProfileService,
     public router: Router,
     private afAuth: AuthService
-  ) { }
+  ) {
+      this.cropperSettings = new CropperSettings();
+      this.cropperSettings.width = 100;
+      this.cropperSettings.height = 100;
+      this.cropperSettings.croppedWidth =100;
+      this.cropperSettings.croppedHeight = 100;
+      this.cropperSettings.canvasWidth = 400;
+      this.cropperSettings.canvasHeight = 300;
+      this.cropperSettings.rounded = true;
+
+      this.data = {};
+    }
 
   ngOnInit() {
     this.getData();

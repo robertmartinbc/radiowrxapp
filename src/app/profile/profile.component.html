@@ -11,6 +11,7 @@
       <hr />
       <div class="row" *ngIf="changingImage">
         <div class="col-sm-12">
+          <img-cropper [image]="data" [settings]="cropperSettings"></img-cropper><br>
           <button class="btn btn-sm" (click)="saveNewImage()">Save</button>
           Show this DIV
         </div>
@@ -56,7 +57,7 @@
       <div *ngFor="let item of items">
         <div class="row">
           <div class="col-sm-3">
-            <img src="http://placehold.it/128x128" class="style-image" />
+            <img [src]="data && data.image ? data.image : 'http://placehold.it/128x128'" class="style-image" />
             <!--<fa name="user" class="user"></fa>-->
 
             <div>

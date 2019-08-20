@@ -52,6 +52,7 @@ import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
+import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
 
 // This page is the landing page for the site if a user is not logged in
 import { MainPageComponent } from './main-page/main-page.component';
@@ -193,7 +194,8 @@ import { BundleidComponent } from './modals/bundleid/bundleid.component';
     GridComponent,
     BundlenameComponent,
     ProductnameComponent,
-    BundleidComponent
+    BundleidComponent,
+    ImageCropperComponent
   ],
   imports: [
     BrowserModule,
